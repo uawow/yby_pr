@@ -1,0 +1,947 @@
+@charset "utf-8";
+
+/* 초기화 */
+
+* {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+html {font-family:'NotoSansKR-Regular',sans-serif; font-weight:300; letter-spacing:-0.01em; -ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; width:100%; height:100%;}
+body {width:100%; margin:0; background:#eee}
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {display:block}
+audio,canvas,progress,video {display:inline-block;vertical-align:baseline}
+audio:not([controls]) {display:none;height:0}
+[hidden],template {display:none}
+a {color:inherit;text-decoration:none;background-color:transparent;-webkit-tap-highlight-color:rgba(255, 255, 255, 0)}
+a:active,a:hover {outline:0}
+abbr[title] {border-bottom:1px dotted}
+b,strong {font-weight:bold}
+dfn {font-style:italic}
+h1 {font-size:2em;margin:0.67em 0}
+mark {background:#ff0;color:#000}
+small {font-size:80%}
+sub,sup {font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup {top:-0.5em}
+sub {bottom:-0.25em}
+img {border:0}
+svg:not(:root) {overflow:hidden}
+figure {margin:1em 40px}
+hr {-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+p {margin:0; padding:0; word_break:break_all;}
+pre {overflow:auto}
+code,kbd,pre,samp {font-family:monospace,monospace;font-size:1em}
+button,input,optgroup,select,textarea {color:inherit;font:inherit;margin:0}
+button {overflow:visible;outline:0}
+button,select {text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"] {-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled] {cursor:default}
+button::-moz-focus-inner,input::-moz-focus-inner {border:0;padding:0}
+input {line-height:normal}
+input[type="checkbox"],input[type="radio"] {box-sizing:border-box;padding:0}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height:auto}
+input[type="search"] {-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance:none}
+fieldset {border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}
+legend {border:0;padding:0}
+textarea {overflow:auto}
+optgroup {font-weight:bold}
+table {border-collapse:collapse;border-spacing:0}
+td,th {padding:0}
+ul,li {list-style:none;}
+
+/* font style */
+.font_b {font-family:NotoSansKR-Bold,sans-serif;font-weight:400}
+.font_r {font-family:NotoSansKR-Regular,sans-serif;font-weight:300}
+.font_m {font-family:NotoSansKR-Medium,sans-serif;font-weight:400}
+
+.float_l {float:left}
+.float_r {float:right}
+
+header {position:relative;top:0;width:100%;height:45px;background:#483334;z-index:20}
+header .logo {position:absolute;top:12px;left:10px}
+header .h_btn_logout {position:absolute;top:9px;left:90px;display:inline-block;font-size:0.8em;background:#fff;border:1px solid #f8f8f8;border-radius:5px;padding:3px 7px}
+header .h_btn_view_cookie {position:absolute;top:9px;left:160px;display:inline-block;font-size:0.8em;background:#fff;border:1px solid #f8f8f8;border-radius:5px;padding:3px 7px}
+header .h_btn_write {position:absolute;top:7px;right:56px}
+header .h_btn_msg {position:absolute;top:7px;right:131px}
+header .h_btn_myinfo {position:absolute;top:7px;right:14px}
+/*
+header .h_btn_myinfo {position:absolute;top:7px;right:14px}
+header .h_btn_add {position:absolute;top:7px;right:14px}
+*/
+
+header .logo{position:absolute; width:50px; height:45px; top:0; left:10px; background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/img/img_logo.png) center center no-repeat; background-size:43px 34px; z-index:1004;}
+@keyframes bounce {
+	50% {transform:scale(0.9);}
+	100% {transform:scale(1);}
+}
+@-webkit-keyframes bounce {
+	50% { -webkit-transform:scale(0.9);}
+	100% { -webkit-transform:scale(1);}
+}
+@-ms-keyframes bounce {
+	50% { -ms-transform:scale(0.9);}
+	100% { -ms-transform:scale(1); }
+}
+@-moz-keyframes bounce {
+	50% { -moz-transform:scale(1.02); }
+	100% { -moz-transform:scale(1); }
+}
+@-o-keyframes bounce {
+	50% { -o-transform:scale(1.02);}
+	100% { -o-transform:scale(1); }
+}
+header .logo_active{animation:bounce 0.2s ease-in-out 1; -webkit-animation:bounce 0.2s ease-in-out; -ms-animation:bounce 0.2s ease-in-out 1; -moz-animation:bounce 0.2s ease-in-out 1; -o-animation:bounce 0.2s ease-in-out 1;}
+
+/* 180618 일감2235 관리자 최하단·최상단 이동버튼 추가 */
+#btnMoveTop {display:none; position:fixed; bottom:10px; right:20px; width:40px; height:40px; z-index:100;}
+#btnMoveBottom{position:fixed; bottom:10px; right:75px; width:40px; height:40px; z-index:100;}
+
+nav {position:relative;top:0;width:100%;height:40px;background:#f3f2f7;border-bottom:1px solid #cbcbce; -webkit-box-shadow:0px 2px 3px 0px rgba(0,0,0,.2);z-index:12}
+nav ul {position:absolute;top:0;left:0;z-index:24;width:100%;background:#f3f2f7;margin:0;padding:0;list-style:none;}
+nav li.top_menu {position:relative;width:20%;float:left;text-align:center;}
+nav li.top_menu a.slct {display:inline-block;width:100%;height:49px;line-height:49px;font-size:0.9em;color:#483334}
+nav li.top_menu a.slct img {position:absolute;right:0;bottom:0}
+nav li.top_menu a.post {display:inline-block;width:100%;height:49px;line-height:49px;font-size:0.9em;background:#e1dfe1}
+nav li.top_menu a.post img {margin-right:5px;vertical-align:middle}
+nav li.top_menu a.ico_dropdown { font-size:7px; padding-right:3px; }
+/* nav li.top_menu:hover .sub_menu {display:block} */
+
+nav li.top_menu .sub_menu {display:none;position:absolute;top:8px;left:2px;width:130%;z-index:10;text-align:left}
+nav li.top_menu .sub_menu li.tab a {display:inline-block;color:#fff;text-align:center;width:80%;height:35px;line-height:35px;font-size:0.9em;border-top-left-radius:3px;border-top-right-radius:3px;background:#483334;font-family:NotoSansKR-Bold,sans-serif;font-weight:400}
+nav li.top_menu .sub_menu li.tab a:hover {color:#cfc37e}
+nav li.top_menu .sub_menu li.list {width:100%;height:43px;background:#483334;padding:0 5px}
+nav li.top_menu .sub_menu li.list a {position:relative;display:inline-block;width:100%;height:38px;line-height:38px;background:#3b2a2b;color:#b4adb0;border-radius:2px;font-size:0.8em;font-family:NotoSansKR-Bold,sans-serif;font-weight:400}
+nav li.top_menu .sub_menu li.list a .slct_value {position:absolute;left:10px}
+
+nav li.top_menu .sub_menu li.list a:hover .slct_value {color:#cfc37e}
+nav li.top_menu .sub_menu li.list a:hover .arrow {background-position:0 -8px}
+nav li.top_menu .sub_menu li.list.begin {border-top-right-radius:3px;padding-top:5px}
+nav li.top_menu .sub_menu li.list.end {border-bottom-left-radius:3px;border-bottom-right-radius:3px}
+nav li.top_menu .sub_menu li.space {height:50px}
+
+nav li.top_menu .styled-select {text-align:center;width:100%;height:50px;line-height:50px;overflow:hidden;background:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/img_dropdown.png") no-repeat right bottom}
+nav li.top_menu select {text-align:center;border:none;background:transparent;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:transparent;outline:none !important;font-size:0.9em;font-family:NotoSansKR-Bold,sans-serif;font-weight:400;color:#483334}
+nav li.top_menu select::-ms-expand {display:none}
+nav li.top_menu select option {}
+
+#contents {}
+#contents #yeo_list ul {margin:0;padding:0;list-style:none; margin-bottom:3px; -webkit-transform:translateZ(0); background-color:#fff;}
+#contents #yeo_list ul li {position:relative;margin:0 8px 3px 8px;border:1px solid #c2c2c2;border-radius:3px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#contents #yeo_list ul li .jump_up_btnbox {width:100%; height:29px; text-align:center;
+background: -moz-linear-gradient(top,  #a29998 1%, #8b807f 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#a29998), color-stop(100%,#8b807f)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a29998 1%,#8b807f 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a29998 1%,#8b807f 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a29998 1%,#8b807f 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a29998 1%,#8b807f 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a29998', endColorstr='#8b807f',GradientType=0 ); /* IE6-9 */
+}
+#contents #yeo_list ul li .jump_up_btnbox a {display:inline-block;margin-top:1px}
+#contents #yeo_list ul li .line {width:100%;height:2px;background:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/line.jpg") repeat-x}
+#contents #yeo_list ul li .ment_area {position:relative;padding:5px 5px 5px 5px;width:100%;min-height:73px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#contents #yeo_list ul li .ment_area .photo_box {}
+#contents #yeo_list ul li .ment_area .photo_box img {z-index:auto;width:54px;height:54px;border:2px solid #d6d7dd;border-radius:27px;margin-right:5px;object-fit:cover;}
+#contents #yeo_list ul li .ment_area .mark_wed {position:absolute;top:52px;left:18px}
+#contents #yeo_list ul li .ment_area .ment_txt {position:relative;padding:5px 0 5px 0;/*word-break:break-all;*/word-wrap:break-word;font-size:1em}
+#contents #yeo_list ul li .ment_area .mem_nick {font-size:1em}
+#contents #yeo_list ul li .ment_area .mem_nick.man {color:#2891b6}
+#contents #yeo_list ul li .ment_area .mem_nick.woman {color:#f4716a}
+
+#contents #yeo_list ul li .ment_area .btn_box {position:absolute;top:5px;right:5px;display:inline-block;width:45px;text-align:center}
+/*
+#contents #yeo_list ul li .ment_area {position:relative;padding:0 53px 0 66px;width:100%;min-height:67px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#contents #yeo_list ul li .ment_area .photo_box {position:absolute;top:5px;left:4px;width:58px;height:58px;background:#d6d7dd;border-radius:29px}
+#contents #yeo_list ul li .ment_area .photo_box img {position:absolute;left:-100%;right:-100%;top:-100%;bottom:-100%;margin:auto;z-index:auto;width:54px;height:54px;border-radius:27px}
+#contents #yeo_list ul li .ment_area .ment_txt {position:relative;padding:5px 0 5px 0;word-break:break-all;font-size:0.925em}
+#contents #yeo_list ul li .ment_area .btn_box {position:absolute;top:5px;right:5px;display:inline-block;width:45px;text-align:center}
+*/
+#contents #yeo_list ul li .list_info {position:relative;padding:0 0 0 10px;width:100%;height:30px;line-height:30px;border-top:1px solid #e5e5e5;background:#f8f8f8;font-size:0.725em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+#contents #yeo_list ul li .list_info .time {display:none;position:absolute;top:0;left:0;width:72px;text-align:center}
+#contents #yeo_list ul li .list_info .mem_info {}
+#contents #yeo_list ul li .list_info .mem_info.man {color:#2891b6}
+#contents #yeo_list ul li .list_info .mem_info.woman {color:#f4716a}
+#contents #yeo_list ul li .list_info .mem_info img {vertical-align:middle;margin-right:5px}
+#contents #yeo_list ul li .list_info .gps {position:absolute;top:0;right:0;display:inline-block;width:70px;text-align:center}
+
+footer {position:fixed;left:0;bottom:0;width:100%;height:45px;background:#283140;z-index:20}
+footer ul {margin:0;padding:0;list-style:none}
+footer ul li {float:left;width:16.666666%}
+footer ul li a {display:inline-block;width:100%;height:45px;line-height:45px;text-align:center}
+footer ul li a img {vertical-align:middle}
+footer ul li a:hover {background:#979797}
+
+/* alert / confirm ui style */
+.notice_pop_wrap {position:fixed;top:0;left:0;width:100%;height:100%;z-index:1100;background:rgba(0, 0, 0, 0.7);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#c0000000,endColorstr=#c0000000);zoom:1;}
+.notice_pop_wrap .notice_pop_bg {position:fixed;top:50%;left:50%;max-width:600px;min-width:300px;width:90%;border-radius:10px;text-align:center;background:#fff}
+.notice_pop_wrap .notice_pop_bg .pop_title {margin:0 auto;padding:0;height:35px;width:95%;border-bottom:2px solid #8d695a;color:#8d695a;font-size:0.9em;text-align:center;line-height:35px;letter-spacing:3px}
+.notice_pop_wrap .notice_pop_bg .notice_txt_box_wrap {width:100%;height:auto;border-bottom:1px solid #eaeaea}
+.notice_pop_wrap .notice_pop_bg .notice_txt_box_wrap .notice_txt {display:block;margin-top:20px;margin-bottom:20px;text-align:center}
+.notice_pop_wrap .notice_pop_bg .notice_txt_box_wrap .notice_txt img {display:inline-block}
+.notice_pop_wrap .notice_pop_bg .notice_txt_box_wrap .notice_txt span {color:#374148;font-size:0.9em}
+.notice_pop_wrap .notice_pop_bg .btn_box_100 {width:100%;height:40px;overflow:none}
+.notice_pop_wrap .notice_pop_bg .btn_box_50 {width:50%;height:40px;overflow:none}
+.notice_pop_wrap .notice_pop_bg .btn_ok {display:inline-block;width:100%;height:40px;color:#374148;font-size:0.9em;text-align:center;line-height:40px}
+.notice_pop_wrap .notice_pop_bg .btn_ok2 {display:inline-block;width:100%;height:40px;color:#374148;font-size:0.9em;text-align:center;line-height:40px}
+
+/* login */
+.login_wrap {top:0;left:0;width:100%;height:100%;background:#eee}
+.login_wrap .login_content {margin:0 auto;width:80%; min-width:280px;height:100%;text-align:center}
+.login_wrap .login_content .logo_title {padding:50px 0 15px 0}
+.login_wrap .login_content .section {position:relative;width:100%;height:50px/*;background:blue;border-bottom:1px solid #fff*/}
+.login_wrap .login_content .section .search_btn_eamil {position:absolute;top:12px;left:35px}
+.login_wrap .login_content .section .search_btn_password {position:absolute;top:12px;right:35px}
+.login_wrap .login_content .section .login_btn {display:inline-block;width:100%;height:40px;line-height:40px;text-align:center;color:#ffc107;font-size:1.125em;border:none;border-radius:5px;background:#374148}
+.login_wrap .login_content .section .login_btn_join {display:inline-block;width:150px;height:40px;line-height:40px;text-align:center;color:#000;font-size:1em;border:1px solid #e5e5e5;border-radius:5px;background:#fff}
+.login_wrap .login_content .section .login_btn_cs {display:block; width:150px; height:40px; margin:10px auto; border:1px solid #e5e5e5; border-radius:5px; background:#dbb6a7; color:#000; font-size:1em; text-align:center; line-height:40px;}
+.login_wrap .login_content .section .first_form {display:block;width:100%;padding:0 0 0 145px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+.login_wrap .login_content .section .first_form .mail_form{position:absolute;left:0;width:140px;text-align:left}
+.login_wrap .login_content .section .second_form {display:none}
+.login_wrap .login_content .section .form_x {position:absolute;top:12px;right:10px}
+
+.login_wrap .login_content .section .mailId {width:104px;border:1px solid #a0a6a9;height:40px;border-radius:5px;padding:0 5px;font-size:0.9em}
+.login_wrap .login_content .section .memId {width:100%;border:1px solid #a0a6a9;height:40px;border-radius:5px;padding:0 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:0.9em}
+.login_wrap .login_content .section .memPw {width:100%;border:1px solid #a0a6a9;height:40px;border-radius:5px;padding:0 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:0.9em}
+.login_wrap .login_content .section select {width:100%;border:1px solid #a0a6a9;border-radius:5px;height:42px;font-size:0.9em;-webkit-appearance:none}
+.login_wrap .login_content .section input.mailDomain {width:100%;border:1px solid #a0a6a9;height:40px;border-radius:5px;padding:0 5px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:0.9em}
+
+/* 18페이지 인트로 */
+.int_page {position:relative; width:100%; height:auto; overflow:none;}
+.int_page .intro_img {display:block; width:100%; height:auto;}
+.int_btn_box {display:block; position:relative; width:100%; background:#d7d7d7;}
+.int_btn_box .login {position:absolute; top:-25px; left:0; width:50%; height:auto;}
+.int_btn_box .join {position:absolute; top:-25px; right:0; width:50%; height:auto;}
+
+/* 32페이지 내정보 */
+.plofile_wrap {width:100%; height:auto;}
+.btn_back {display:block; width:40px; padding-top:7px; padding-left:19px;}
+.title_header {position:absolute; top:11px; left:62px; color:#fff; font-size:15px;}
+.tap_box {width:100%; height:49px; background-color:#f2f2f5;}
+.tap_on {display:inline-block; float:left; width:50%; height:47px; border-bottom:3px solid #493335; color:#493335; font-size:13px; text-align:center; line-height:49px;}
+.tap_off {display:inline-block; float:left; width:50%; height:49px; border-bottom:1px solid #d0d0d3; color:#493335; font-size:13px; text-align:center; line-height:49px;}
+.agree_tap_on {display:inline-block; float:left; width:33.33%; height:47px; border-bottom:3px solid #493335; color:#493335; font-size:13px; text-align:center; line-height:49px;}
+.agree_tap_off {display:inline-block; float:left; width:33.33%; height:49px; border-bottom:1px solid #d0d0d3; color:#c1b8bb; font-size:13px; text-align:center; line-height:49px;}
+.select_box_01 {clear:both; width:100%; height:38px; padding-top:19px; padding-bottom:15px;}
+.select_box_02 {clear:both; width:100%; height:38px; padding-bottom:8px;}
+.select_box_03 {clear:both; width:100%; height:auto; padding-bottom:8px;}
+.select_title_box_01 {float:left; width:20.9375%; height:38px; font-size:14px; line-height:38px;}
+.select_title_box_02 {float:left; width:20.9375%; height:38px; font-size:14px; line-height:38px;}
+.select_title_box_03 {float:left; width:95%; height:38px; font-size:14px; line-height:38px;}
+.text_align_center {text-align:center;}
+.text_align_left {padding-left:8px; text-align:left;}
+.select_dropbox {float:right; width:72.9375%; height:38px; margin-right:8px; border:1px solid #d3d3d3; border-radius:3px;}
+.select_dropbox_child_01 {float:left; width:34.75%; height:38px; margin-left:4px; border:1px solid #d3d3d3; border-radius:3px;}
+.select_dropbox_child_02 {float:right; width:34.75%; height:38px; margin-right:8px; border:1px solid #d3d3d3; border-radius:3px;}
+.select_ment {display:block;margin-left:11px; color:#727272; font-size:14px; line-height:38px; letter-spacing:-1px;}
+.select_color {color:#795548;}
+.select_li_color {color:#263238;}
+.arrow_box {position:relative; float:right; width:45px; height:38px; border-left:1px solid #eaeaea; background-color:#ededed;}
+.arrow_box img {display:block; position:absolute; top:16px; left:18px;}
+.plofile_photo_box {position:relative; clear:both; width:100%; height:105px; margin:0; padding:0; overflow:none; border-top:2px solid #a97a50;}
+.plofile_photo_img {z-index:1; width:100%; height:100%; border-bottom:1px solid #9a8a63;}
+.btn_photo_box {position:absolute; z-index:2; top:0; left:3px; width:28.3125%; height:auto;}
+.btn_photo_box span {position:absolute; top:8px; left:8px; color:#fff; font-size:14px;}
+.plofile_text_box {position:absolute; z-index:2; top:10px; right:10px; width:69.6875%; height:auto;}
+.plofile_text_box p {color:#a8a8a8; font-size:13px; line-height:15px; letter-spacing:-1px;}
+.btn_photo_regi {display:block; position:absolute; top:45px; left:8px;}
+.plofile_photo {display:block; width:60px; height:60px; border:2px solid #d6d7dd; border-radius:50%; moz-border-radius:50%;webkit-border-radius:50%;}
+.plofile_photo img {width:60px; height:60px; border-radius:50%; moz-border-radius:50%;webkit-border-radius:50%;}
+.plofile_photo_position {position:absolute; top:35px; left:8px;}
+.select_box_wrap {clear:both; width:100%; height:auto; background:#fff;}
+.padding_wrap {padding-top:15px; padding-bottom:15px;}
+.text_box {display:block; width:90%; height:88px; margin-right:auto; margin-left:auto; padding:7px 10px 10px 7px; border:1px solid #d3d3d3; border-radius:3px; color:#727272; font-size:14px; resize:none;}
+.hope_partner {clear:both; width:100%; height:39px; border-top:2px solid #544848; border-bottom:1px solid #cfceca; background-color:#7a7370; color:#fff; font-size:16px; text-align:center; line-height:39px;}
+.btn_profile_save {display:block; padding-top:5px; text-align:center;}
+/* 내정보 팝업 */
+.one_choice_box {float:left; clear:both; width:100%; height:auto; padding-bottom:45px; overflow:hidden;}
+.choice_list {display:inline-block; clear:both; width:100%; height:35px; padding-left:26px; border-top:1px solid #fff; border-bottom:1px solid #d0d0d1; background-color:#f2f2f5; color:#374148; font-size:14px; line-height:35px;}
+.choice_list:hover {border-top:1px solid #a09999; border-bottom:1px solid #87817e; background-color:#635958; color:#fff;}
+.multi_choice_ment {position:relative; clear:both; width:100%; height:57px; border-bottom:1px solid #d0d0d1; background-color:#fff; text-align:center;}
+.multi_choice_ment img {display:block; padding-top:10px; padding-left:6px; vertical-align:middle;}
+.multi_choice_ment span {display:block; float:left; padding-top:8px; padding-left:20%; color:#424a5e; font-size:14px;}
+.multi_choice_box {width:50%;}
+.multi_choice_list {display:inline-block; clear:both; width:100%; height:35px; border-top:1px solid #fff; border-bottom:1px solid #d0d0d1; background-color:#f2f2f5; color:#374148; font-size:14px; line-height:35px;}
+.btn_multi_choice {position:fixed; bottom:0; width:100%; height:45px;}
+.btn_multi_one {display:block; width:100%; height:45px; color:#FFF; font-size:16px; text-align:center; line-height:45px;}
+.btn_multi_left {display:block; width:50%; height:45px; color:#FFF; font-size:16px; text-align:center; line-height:45px;}
+.btn_multi_bg01 {background-color:#c5beb6;}
+.btn_multi_bg02 {background-color:#7a7370;}
+
+/* 체크박스 */
+input[type=checkbox].cp_check {position:absolute; z-index:-1000; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; border:0; clip:rect(0 0 0 0);}
+input[type=checkbox].cp_check {display:block; height:28px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label {display:inline-block; height:28px; padding-left:35px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+input[type=checkbox].cp_check:checked + label {background-position:0 -28px;}
+input[type=checkbox].label {background-position:0 -28px;}
+.css-label_01 {display:inline-block; height:28px; margin-top:-4px; margin-left:26px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label.css-label_01 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/join_check.png');}
+
+/* 21페이지 아이디/비밀번호 찾기 */
+.id_search_txt01 {width:90%; margin:0 auto; padding-bottom:14px; color:#374148; font-size:14px;}
+.id_search_padding01 {padding-top:41px;}
+.id_search_padding02 {padding-top:17px;}
+.id_search_txt02 {width:90%; margin:0 auto; padding-bottom:13px; color:#374148; font-size:14px;}
+.id_search_txt03 {width:90%; margin:0 auto; padding-bottom:13px; color:#374148; font-size:14px; text-align:center;}
+.divide_line {width:90%; height:1px; margin:0 auto; margin-top:28px; border-bottom:1px solid #fff; background-color:#cecece;}
+.logo_title_phonein {width:100%; height:65px; margin:0 auto; padding-top:40px; text-align:center;}
+/* 24페이지 휴대폰인증완료 */
+.join_ment_box {width:99%; height:auto; margin:0 auto; margin-top:150px; border:2px solid #d3c7c3; border-radius:5px; background-color:#fff; text-align:center;}
+.in_img {margin-top:-33px;}
+.welcom_txt01 {padding-top:12px; padding-bottom:28px; font-size:20px;}
+.welcom_txt02 {width:79%; height:28px; margin:0 auto; border-bottom:2px solid #ead8a0; font-size:14px; text-align:center; line-height:28px;}
+.join_ment-box_margin {margin-bottom:26px;}
+/* 23페이지 이용약관 */
+.agreement_txt_box {width:95%; height:520px; margin:0 auto; padding:5px 8px; background-color:#fff; color:#000; font-size:10px; overflow-y:auto;overflow-x:none;}
+.agreement_txt_box pre { white-space:pre-wrap; word-wrap:break-word; }
+/* 36페이지_사진등록하기*/
+.photo_regi_wrap {width:100%; height:142px; border-bottom:1px solid #b6bcbf; background-color:#fff; text-align:center;}
+.photo_regi_wrap02 { width:100%; height:auto; border-bottom:1px solid #b6bcbf; background-color:#fff; text-align:center; }
+.photobox_wrap {display:block; position:relative; width:150px; height:104; margin:0 auto;}
+.photobox_wrap .p_box {display:inline-block; width:148px; height:104px; margin-top:20px; border:1px solid #b6bcbf; border-radius:5px;}
+.photobox_wrap .p_box img {margin-top:8px; border:1px solid #b6bcbf;}
+.photobox_wrap .p_x {position:absolute; top:5px; right:-15px;}
+.text_box_margin { width:100%; height:auto; overflow:hidden; padding-top:20px; border-top:1px solid #fff; border-bottom:1px solid #3a3a3a; }
+.btn_photo {display:block; width:27.50%; height:33px; margin-top:10px; margin-bottom:10px; margin-left:2.8125%; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center;line-height:33px; filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );/* IE6-9 */}
+.btn_alarm_bg { display:block; height:42px; margin:0 auto; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center;/* FF3.6+ */ line-height:42px;filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );/* IE6-9 */ }
+.btn_photo_01 { clear:both; display:inline-block; width:120px; height:40px; margin-top:17px; margin-bottom:10px; margin-right:10px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center; line-height:40px; filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );/* IE6-9 */}
+.btn_photo_02 { clear:both; display:inline-block; width:120px; height:40px; margin-bottom:5px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center; line-height:40px; filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );/* IE6-9 */}
+
+.btn_photo_mr {margin-right:1.8125%;}
+.btn_photo_color01 {color:#666;}
+.photo_save_wrap { clear:both; width:100%; height:auto; margin-top:20px;}
+.alarm_txt_header {margin-top:-15px;}
+.photo_alarm_box {width:282px; height:auto; margin:0 auto; margin-bottom:20px; border:1px solid #958b8a; border-radius:3px; background-color:#fff;}
+.btn_alarm {display:block; width:256px; height:42px; text-align:center; margin-bottom:10px;}
+.alarm_margin_top {margin-top:20px;}
+.alarm_margin_bottom {margin-bottom:10px;}
+.alarm_margin_last_bottom {margin-bottom:20px;}
+/* 35페이지 포토앨범 */
+.photo_regi_box {width:100%; height:auto; border-bottom:1px solid #d0d0d1;}
+.btn_p_regi_txt {display:block; padding-top:20px; padding-bottom:15px; text-align:center;}
+.photoalbum_regi_textbox {width:100%; height:117px; padding-top:15px; border-bottom:1px solid #fff; background-color:#f2f2f5;}
+.photoalbum_regi_textbox .txt_01 {width:95%; margin:0 auto; font-size:14px;}
+.photoalbum_regi_textbox .txt_02 {display:block; width:80%; margin-top:3px; margin-left:60px; font-size:14px; letter-spacing:-1px;}
+.photoalbum_regi_textbox .txt_03 {display:block; width:80%; margin-top:3px; margin-left:30px; font-size:14px; letter-spacing:-1px;}
+.sub_txt {color:#727272; font-size:12px;}
+.ico_ex {float:left; margin-top:3px; margin-left:9px; vertical-align:middle;}
+.text_color_sub {color:#604445;}
+.photo_list_wrap {width:100%; height:auto; overflow:hidden; border-top:1px solid #3a3a3a; background-color:#fff;}
+.photo_list_margin_top {margin-top:11px;}
+.photo_list_box {width:95%; height:135px; margin-right:auto; margin-left:auto; padding-bottom:20px;}
+.photo_on_box {float:left; width:33%; height:130px; margin-top:9px; margin-right:1px;}
+.photo_on {position:relative; width:84px; height:84px; border:1px solid #beb7a9;}
+.my_photo img {display:block; width:80px; height:80px; margin-top:2px; margin-left:2px;}
+.photo_text {width:84px; height:36px; margin-top:5px; margin-left:1px; overflow:hidden; text-overflow:ellipsis; white-space:normal; word-break:keep-all;}
+.photo_on_x {position:absolute; top:-10px; right:-13px;}
+.no_photo_img {display:block; margin:0 auto; margin-top:50px; padding-bottom:218px;}
+/* 38페이지 _글쓰기 */
+.btn_regi_ico {display:block; margin-top:-22px;}
+.id {display:block; color:#3d3f4e; font-size:17px; text-align:center;}
+.s_mark_man {display:block; margin-top:2px; padding-bottom:12px; color:#636477; font-size:14px; text-align:center;}
+.s_mark_man .ico_man {margin-bottom:3px; padding-right:5px; vertical-align:middle;}
+.s_mark_man .ico_woman {margin-bottom:4px; padding-right:5px; vertical-align:middle;}
+   /* 컬러픽커 */
+.up_color {display:inline-block; float:left; width:75%; margin-left:-30px;}
+.down_color {display:inline-block; float:left; width:75%; margin-bottom:10px; margin-left:-30px;}
+.up_color li {float:left; list-style:none;}
+.down_color li {float:left; list-style:none;}
+.up_color ul li img {display:block; padding-right:7px;}
+input[type=radio].cp_check_wt {position:absolute; z-index:-1000; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; border:0; clip:rect(0 0 0 0);}
+input[type=radio].cp_check_wt {display:inline-block; height:21px; padding-left:31px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label {display:inline-block; height:21px; padding-left:31px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+input[type=radio].cp_check_wt:checked + label {background-position:0 -21px;}
+input[type=radio].label {background-position:0 -21px;}
+label.css-label_03 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_default.png');}
+label.css-label_04 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_01.png');}
+label.css-label_05 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_02.png');}
+label.css-label_06 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_03.png');}
+label.css-label_07 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_04.png');}
+label.css-label_08 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_05.png');}
+label.css-label_09 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_06.png');}
+label.css-label_10 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_07.png');}
+label.css-label_11 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_08.png');}
+label.css-label_12 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_09.png');}
+label.css-label_13 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_10.png');}
+label.css-label_14 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_11.png');}
+label.css-label_15 {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_12.png');}
+.notice {clear:both; width:100%; height:90px; background:#fff;}
+.notice p {width:90%; margin:0 auto; padding-top:8px; color:#b6b6b6; font-size:11px; line-height:140%;}
+.notice p span {color:#F00;}
+/* 47페이지 메시지함 */
+.msg_wrap { display:block; width:100%; height:100%; background-color:#ccc1b5; overflow:hidden; overflow-y:auto;  }
+.line_wrap { display:block; position: absolute; ; z-index:-1; top:0; left:14px; width:6px; height:200%; background-color:#b5a490; background-repeat:repeat-y; overflow:hidden; overflow-y:auto; }
+.btn_header_bar { width:100%; height:35px; background-color:#f2f2f5; border-bottom:1px solid #d0d0d3; } /* 20150720 수정 */
+.check_all_bar {width:100%; height:35px; background-color:#f2f2f5;} /* 20150722 수정 */
+.check_all_bar2 {width:100%; height:35px; background-color:#f2f2f5; box-shadow:0px 5px 5px 0px rgba(0,0,0,0.25); -webkit-box-shadow:0px 5px 5px 0px rgba(0,0,0,0.25); -moz-box-shadow:0px 5px 5px 0px rgba(0,0,0,0.25);}
+input[type=checkbox].cp_check_all {position:absolute; z-index:-1000; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; border:0; clip:rect(0 0 0 0);}
+input[type=checkbox].cp_check_all {display:block; height:18px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+input[type=checkbox].cp_check_all:checked + label {background-position:0 -18px;}
+.css-label_16 {display:inline-block; height:18px; margin-top:11px; margin-left:8px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label.css-label_16 {background-image:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_all.png");}
+.btn_msg {display:block; width:67px; height:24px; margin-top:4px; margin-right:14px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); color:#727272; font-size:13px; text-align:center; line-height:24px; filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#ededed',GradientType=0 );}
+input[type=checkbox].cp_check_msg_list {position:absolute; z-index:-1000; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; border:0; clip:rect(0 0 0 0);}
+input[type=checkbox].cp_check_msg_list {display:block; height:18px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+input[type=checkbox].cp_check_msg_list:checked + label {background-position:0 -18px;}
+.css-label_17 {display:inline-block; height:18px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label.css-label_17 {background-image:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/check_msg_list.png");}
+  /* ----- 메시지 리스트  ---*/
+.msg_list_wrap { width:100%; height:auto; }
+.msg_list_box { width:93.4375%; height:66px; margin-left:8px; overflow-x:hidden; overflow-y:hidden; }
+.msg_margin_top {margin-top:8px;}
+.msg_one_top {margin-top:-16px;}
+.list_check {float:left; width:23px; height:auto; margin-top:11px;}
+.msg_photo_box {display:block; position:relative; z-index:2; left:31px; width:100%; height:auto;}
+.mask_photo {display:block; position:absolute; z-index:4; top:0; left:0; width:38px; height:38px;}
+.member_photo {display:block; position:absolute; z-index:3; top:9px; left:0; max-width:38px; max-height:38px; border-radius:50%}
+.id_box {position:absolute; z-index:1; top:6px; left:42px; width:54.87290%; height:30px; border-top-left-radius:10px; border-top-right-radius:10px; background-color:#f1f1f1; line-height:17px;}
+.id_txt {margin-left:12px; font-size:14px;} /* 150720 수정 */
+.id_woman_color {color:#f65a52;}
+.id_man_color {color:#19a1d1;}
+.id_age_txt {margin-right:5px; font-size:12px; } /* 150720 수정 */
+@media (min-width:360px) {
+.id_age_txt {font-size:13px; }}
+@media (min-width:414px) {
+.id_age_txt {font-size:14px; }
+}
+@media (min-width:520px) {
+.id_age_txt {font-size:14px; }	
+}
+.msg_txt_box {position:absolute; z-index:2; top:23px; left:42px; width:68%; height:auto; padding:5px 12px; border-top-right-radius:25px; border-bottom-right-radius:25px; border-bottom-left-radius:20px; background-color:#fff; font-size:14px; line-height:17px;word-break:break-all;}
+.ico_new {margin-left:5px;}
+.msg_time {float:right; margin-top:6px; margin-right:13%; color:#374148; font-size:12px; letter-spacing:-1px;}
+.msg_time img {margin-right:3px; margin-bottom:2px; vertical-align:middle;}
+.no_msg {width:100%; height:640px; background-color:#fff; text-align:center;}
+.no_msg img {padding-top:150px;}
+.btn_refresh_msg { display:inline-block; padding-top:8px; padding-right:20px; float:right; } /* 20150722 추가 */
+
+/* 47페이지 메시지 상세 */
+.msg_de_list_wrap {position:relative; width:100%; height:auto; overflow:hidden;}
+.btn_basic {display:block; width:auto; height:18px; border:1px solid #d8d8d8; border-radius:5px; background:#593f40; background:-moz-linear-gradient(top, #593f40 0%, #392829 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#593f40), color-stop(100%,#392829)); background:-webkit-linear-gradient(top, #593f40 0%,#392829 100%); background:-o-linear-gradient(top, #593f40 0%,#392829 100%); background:-ms-linear-gradient(top, #593f40 0%,#392829 100%); background:linear-gradient(to bottom, #593f40 0%,#392829 100%); font-size:0.75em; text-align:center; line-height:18px; letter-spacing:-1px;}  /* 150720 수정 */
+.btn_basic_02 {display:block; width:auto; height:18px; border:1px solid #d8d8d8; border-radius:5px; background:#593f40; background:-moz-linear-gradient(top, #593f40 0%, #392829 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#593f40), color-stop(100%,#392829)); background:-webkit-linear-gradient(top, #593f40 0%,#392829 100%); background:-o-linear-gradient(top, #593f40 0%,#392829 100%); background:-ms-linear-gradient(top, #593f40 0%,#392829 100%); background:linear-gradient(to bottom, #593f40 0%,#392829 100%); font-size:0.75em; text-align:center; line-height:18px; letter-spacing:-1px;} /* 150720 수정 */
+.btn_msg_03 {display:block; width:67px; height:30px; margin-top:7px; margin-right:17px; border:1px solid #adadad; border-radius:5px; background:#593f40; background:-moz-linear-gradient(top, #593f40 0%, #392829 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#593f40), color-stop(100%,#392829)); background:-webkit-linear-gradient(top, #593f40 0%,#392829 100%); background:-o-linear-gradient(top, #593f40 0%,#392829 100%); background:-ms-linear-gradient(top, #593f40 0%,#392829 100%); background:linear-gradient(to bottom, #593f40 0%,#392829 100%); color:#fff; font-size:13px; text-align:center; line-height:30px;}  /* 150720 수정 */
+.fc_white { color:#fff; }
+.btn_header_pd01 {padding:6px 4px;}
+.btn_header_pd02 {padding:6px 12px;}
+.btn_header_mg01 {margin-top:1px; margin-left:8px;}
+.btn_header_mg02 {margin-top:1px; margin-left:3px;}
+.btn_header_mg03 {margin-top:1px; margin-right:10px;} /* 20150722 추가 */
+.btn_header_mg04 {margin-top:1px; margin-right:7px;} /* 20150722 추가 */
+.talk_date_list {position:relative; clear:both; width:80%; height:30px; margin:0 auto; margin-bottom:20px; border-bottom:2px solid #333; text-align:center;} /* 20150810 수정 */
+.talk_date_list span {display:inline-block; margin-top:15px; padding:5px 10px; background:#ccc1b5; color:#222; font-size:14px;}
+.talk_date {position:relative; clear:both; width:90%; height:30px; margin:0 auto; margin-bottom:15px; border-bottom:2px solid #d9d1c9; text-align:center;} /* 20150810 수정 */
+.talk_date span {display:inline-block; margin-top:15px; padding:5px 10px; background:#FFF; color:#715247; font-size:14px;}
+	/* -- 상대 말풍선  -- */
+.msg_talk_wrap {position:relative; z-index:1; clear:both; width:100%; height:auto; margin-bottom:10px; overflow:hidden;}
+.partner_info { position:absolute; font-size:14px; z-index:4; left:43px; color:#444; width:100%; text-align:left;} /* ------ 20150722 추가 ------ */
+
+@media(max-width:359px){
+.partner_info{font-size:13px; letter-spacing:-1px;}
+}
+
+.partner_msg_box {position:relative; z-index:2; width:83.28125%; height:auto; margin-left:3%; } /* ------ 20150722 수정 ------ */
+.p_photo {display:block; position:absolute; position:absolute; z-index:3; top:1px; left:2px; width:34px; height:34px; border:2px solid #fff; border-radius:50%;}
+.p_photo img {width:34px; height:34px; border-radius:50%;}
+.partner_talkbubble {position:relative; top:18px; left:18px; float:left; max-width:75%; height:auto; padding:5px 8px 22px 25px; border-bottom:1px solid #cfe2de; border-radius:5px; background-color:#dbf0eb; color:#292929; font-size:13px; text-align:left;word-break:break-all;}
+.partner_talk_time { display:block; position:absolute; right:-59px; bottom:24px; color:#374148; font-size:12px; }/* ------ 20150722 수정 ------ */
+.add_img {display:block; width:120px; height:auto; margin:5px 0; border:1px solid #dcdcdc; background:#FFF;}
+	/* -- 내 말풍선  -- */
+.my_msg_box {position:relative; width:83.28125%; height:auto; float:right; right:5%;} /* 150720 수정 */
+.my_talkbubble {position:relative; float:right; max-width:65.5625%; padding:11px 8px 11px 11px; border-radius:5px; background-color:#491931; color:#b7b9c6; font-size:13px;word-break:break-all;}
+.my_talkbubble:before {position:absolute; top:6px; left:100%; width:7px; height:8px; background:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/msg_bubble_arrow.png") no-repeat; content:" "; pointer-events:none;}
+.my_talk_time { display:block; position:absolute; left:-59px; bottom:10px; color:#374148; font-size:12px; } /* 150720 수정 */
+	/* -- 메시지입력  -- */
+.msg_bar {position:relative; bottom:6px; clear:both; width:100%; height:35px; padding-top:19px; padding-bottom:6px; background:#fff;}
+.msg_bar .msg_text_box {width:93.75%; height:33px; margin:0 auto; border:1px solid #ffc107; border-radius:3px; background:#fff; list-style:none;}
+.msg_bar .btn_camera {display:block; float:left; padding-top:5px; padding-bottom:6px; padding-left:10px; background:#fff; height:22px;}
+.msg_bar .ico_camera img {display:block; margin:9px 11px;}
+.msg_bar .textarea {width:60.1666%; height:15px; padding:8px 7px 10px 8px; border:none; color:#292929; font-size:13px; line-height:13px;}
+.msg_bar .btn_send {display:block; float:right; width:8.3333%; height:13px; padding:11px 14px 9px 13px; background:#ffc107; color:#292929; font-size:13px; text-align:center; line-height:10px;}
+/* 40페이지 프로필 상세정보 */
+.profile_look_number_box {position:relative; clear:both; width:100%; height:40px; margin:3px 0 0; border-top:1px solid #483334; border-bottom:1px solid #483334;}
+.profile_look_number_box img {float:left;}
+.number_txt_box {float:left; width:33%; height:40px; margin-left:10px; color:#727272; font-size:14px; line-height:40px; vertical-align:middle;}
+.number {padding-right:3px; padding-left:5px; color:#483334; font-size:20px; text-align:right; line-height:40px; vertical-align:bottom;}
+.btn_look {display:block; float:right; width:8.34375%; height:13px; margin-top:4px; margin-right:5px; padding:9px 10px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); font-size:13px; text-align:center; line-height:13px;}
+.profile_text_box {clear:both; width:100%; height:39px; border-bottom:1px solid #393e4b; background-color:#515765; line-height:40px;}
+.text_head {padding-left:9px; color:#acafb6; font-size:14px;}
+.wedding_select {color:#f8e91e;}
+.profile_detail_txtbox {width:100%; height:80px; border-top:1px solid #a0a4ad; border-bottom:2px solid #313741;}
+.profile_photo_box {display:block; float:left; width:70px; height:60px; margin-top:11px; margin-right:8px; margin-left:8px; border:1px solid #beb7a9; background-color:#fff;}
+.profile_photo_box img {width:66px; height:56px; padding-top:2px; padding-left:2px;}
+.profile_info_txt {float:left; width:43.5625%; height:55px; padding:0; color:#727272; font-size:13px; letter-spacing:-1px;}
+.profile_info_txt span {color:#263238; text-align:right;}
+.profile_info_txt .pd_txt_01 {padding-left:18px;}
+.profile_info_txt .pd_txt_02 {padding-left:6px;}
+.btn_call_img {display:inline-block; float:right; padding-top:15px; padding-right:6px;}
+.info_box_wrap {clear:both; width:100%; height:auto; overflow:hidden; background-color:#f3f4f6;}
+.info_text {width:94.6875%; height:auto; margin:0 auto; margin-bottom:11px; border:1px solid #b6bcbf; border-radius:3px; background-color:#fff;}
+.mg_top {margin-top:15px;}
+.first_head {height:36px; border-bottom:1px solid #b6bcbf; box-shadow:0px 1px 0px 0px #f0eeee; color:#263238; font-size:12px; line-height:36px; -webkit-box-shadow:0px 1px 0px 0px #f0eeee; -moz-box-shadow:0px 1px 0px 0px #f0eeee;}
+.first_head img {display:block; float:left; margin-top:6px; margin-right:6px; margin-left:11px;}
+.info_txt_list {display:block; width:93.06930%; margin:0 auto; overflow:hidden; }
+.info_txt_list2 {display:block; width:100%; margin:0 auto; overflow:hidden; }
+
+.info_txt_list div { display:block; padding:8px 5px 3px 5px; color:#727272; font-size:0.9em;}
+.info_txt_list div span { display:block; float:right; overflow:hidden; color:#374148; font-size:0.8em; text-overflow:ellipsis;white-space:nowrap;width:200px; margin-left:10px; } /* 프라임회원 수정 */
+.info_border {border-bottom:1px solid #e5e5e5;}
+
+.info_msg_box {display:block; height:auto; padding:10px 10px; overflow:hidden; color:#727272; font-size:14px;}
+.info_pr_photo_box {display:block; height:auto; padding-bottom:11px; overflow:hidden;}
+.no_photo {display:block; margin:0 auto;}
+.pr_photo_box {width:33.3333%;}
+.pr_photo {display:block; width:85px; height:85px; margin:0 auto; border:1px solid #beb7a9;}
+.pr_photo img {width:81px; height:81px; margin-top:2px; margin-left:2px;}
+.btn_report {display:block; float:left; margin-bottom:8px; margin-left:8px;}
+.btn_call_img2 {display:block; float:right; margin-right:8px; margin-bottom:8px;}
+/* 42페이지 희망배우자정보 */
+.want_partner {width:100%; height:45px; padding-left:8px; border-top:1px solid #a0a4ad; border-bottom:2px solid #313741; color:#424a5e; font-size:16px; line-height:45px;}
+/* 41페이지 사진확대보기 */
+.photo_big_wrap {width:100%; height:100%; position:fixed; background-color:#000;}
+.photo_numberbox {display:block; float:left; width:50px; height:30px; margin-top:7px; margin-left:8px; background-color:#564344; color:#ad9e9c; font-size:14px; text-align:center; line-height:30px;}
+.btn_closed {display:block; float:right; margin-top:7px; margin-right:8px;}
+.big_photo {position:relative; width:100%; height:auto;}
+.big_photo > img {width:100%; height:auto;}
+.photo_msg_txtbox {position:absolute; bottom:0; width:100%; height:auto; overflow:hidden; background:rgba(0,0,0,0.4);}
+.photo_msg_txt {width:90%; height:auto; margin:0 auto; padding:10px 10px; color:#fff; font-size:14px; word-wrap:break-word;}
+.btn_report_img03 {display:block; margin-top:15px; margin-right:8px; margin-bottom:10px; margin-left:8px;}
+.photo_arrow_left {display:block; position:absolute; top:0; left:4.6875%; right:0; bottom:0; height:15%; margin:auto;}
+.photo_arrow_right {display:block; position:absolute; top:0; left:87.5%; right:0px; bottom:0; height:15%; margin:auto;}
+/* 59페이지 내프로필열람 회원 */
+.my_profile_rd_box {clear:both; width:100%; height:48px; border-bottom:2px solid #8d695a;}
+.mg_box_01 {width:89.375%; height:48px; margin:0 auto; line-height:48px;}
+.today {color:#727272; font-size:14px;}
+.today > span {color:#715247; font-size:18px;}
+.text_mg_left {margin-left:26px;}
+.btn_mg_top {margin-top:7px;}
+	/* --- 멤버박스  --- */
+.profile_rd_member_box {clear:both; width:100%; height:67px;}
+.mg_box_02 {position:relative; clear:both; width:95%; height:53px; margin:0 auto; padding:7px;}
+.profile_rd_pbox {position:relative; width:52px; height:52px; border-radius:50%; background-color:#cbbaa3;}
+.profile_rd_pbox .rd_member_photo {width:52px; height:52px; border-radius:50%;}
+.wedding_mark {position:absolute; top:40px; left:12px;}
+.rd_id {display:inline-block; padding-top:5px; padding-left:12px; font-size:13px; letter-spacing:-1px;}
+.rd_date {display:inline-block; padding-top:5px; padding-left:12px; color:#797979; font-size:12px;}
+.btn_rd_profile {display:block; position:absolute; top:2px; right:0;}
+.btn_rd_clear {display:block; position:absolute; top:10px; right:55px;}
+.btn_rd_clear2 {display:block; position:absolute; top:10px; right:0;}
+.btn_profile_call {display:block; position:absolute; top:10px; right:0px;}
+
+.no_data {width:100%; height:100%; background-color:#fff; }
+.no_data img {display:block; margin:0 auto; padding-top:30%;}
+
+/* --- 열람 멤버 없을때 ---*/
+.no_rd_member {position:fixed; width:100%; height:100%; background-color:#fff; border-top:1px solid #d0d0d3;}
+.no_rd_member > img {display:block; margin:0 auto; padding-top:30%;}
+/* 43페이지 이용권 구매 */
+.tiket_buy_bg {position:fixed; width:100%; height:100%; background:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/tiket_pattern.jpg") repeat-y;}
+.tiket_buy_bg > img {display:block; margin:0 auto;}
+.tiket_buy_bg > p {color:#c8ccdb; font-size:18px; text-align:center;}
+.tiket_pd_top01 {padding-top:40px; padding-bottom:10px;}
+.tiket_pd_top02 {padding-top:2px; padding-bottom:2px;}
+.tiket_mg_top01 {margin-top:25px;}
+.tiket_divide_line {width:100%; height:1px; border-top:1px solid #1a1f2b; border-bottom:1px solid #45597c; background-color:#242c3b;}
+.btn_week_tiket {display:block; float:left; margin-top:20px; margin-left:5.3125%;}
+.btn_month_tiket {display:block; float:right; margin-top:20px; margin-right:5.3125%;}
+/* 45페이지 메시지 수신화면 팝업 */
+.wrap_msg {clear:both; width:93.75%; height:auto; margin:0 auto; overflow-x:hidden;overflow-y:hidden;}
+.pop_msg_h_wrap {position:relative; width:99.5%; height:32px; margin:0 auto; margin-top:5px; border-top:1px solid #3a3030; border-right:1px; border-left:1px solid #3a3030; border-top-right-radius:5px; border-top-left-radius:5px;}
+.pop_msg_header {position:absolute; bottom:0; width:100%; height:32px; border-top:1px solid #6d5859; border-top-right-radius:5px; border-top-left-radius:5px; background:#533b3c; background:-moz-linear-gradient(top, #533b3c 0%, #483334 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#533b3c), color-stop(100%,#483334)); background:-webkit-linear-gradient(top, #533b3c 0%,#483334 100%); background:-ms-linear-gradient(top, #533b3c 0%,#483334 100%); line-height:32px;}
+.pop_msg_header span {padding-left:11px; color:#fff; font-size:16px;}
+.pop_msg_header img {display:block; float:left; margin-top:-4px; margin-left:9px;}
+.pop_msgbox {clear:both; width:99.4%; height:auto; margin:0 auto; border:1px solid #3a3030; border-bottom-right-radius:5px; border-bottom-left-radius:5px; background:#fff; overflow-x:hidden;overflow-y:hidden;}
+.pop_msgbox .pop_content {position:relative; width:94%; height:auto; margin:0 auto; font-size:12px;}
+.pop_msgbox .pop_content .send_id {width:100%; margin-top:14px; text-align:left;}
+.pop_msgbox .pop_content .send_id .t_text {color:#000; font-size:13px; line-height:15px;}
+.pop_msgbox .pop_content .send_id .msg_box_id {display:inline-block; padding-left:2px; font-size:12px;}
+.pop_msgbox .pop_content .send_id .s_age {font-size:12px; letter-spacing:-1px;}
+.pop_msgbox .pop_content .send_id .text_line {display:inline-block; float:right; margin-top:3px; margin-right:5px; color:#727272; font-size:11px; letter-spacing:-1px;}
+.pop_msgbox .textarea {width:96%; height:91px; margin-top:6px; padding:6px 5px; border:1px solid #dedede; border-radius:5px; color:#727272; font-size:14px; overflow-x:hidden;overflow-y:auto;resize:none;}
+.send_btn_msg {display:inline-block; width:auto; height:15px; margin-top:7px; margin-bottom:15px; border:1px solid #adadad; border-radius:5px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); color:#666; font-size:14px; text-align:center; line-height:15px;}
+.send_btn_block {display:inline-block; position:absolute; top:-10px; right:3px; width:50px; height:15px; border:1px solid #adadad; border-radius:5px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); color:#666; font-size:12px; text-align:center; line-height:15px;}
+.send_btn_block img {margin-bottom:2px; padding-right:2px; vertical-align:middle;}
+.send_btn_mg_left {margin-left:24px;}
+.send_btn_mg_right01 {margin-right:24px;}
+.send_btn_mg_right02 {margin-right:0.8%;}
+.send_btn_pd_01 {padding:7px 40px;}
+.send_btn_pd_02 {padding:6px 0px;}
+.send_btn_pd_03 {padding:7px 7px;}
+.send_btn_pd_04 {padding:7px 13px;}
+.color_black {color:#000;}
+.color_red {color:#b50a0d;}
+
+/* 48페이지 63페이지 경고/이용정지/프로필재등록 */
+.warning_wrap {width:100%; height:auto;}
+.warning_wrap_bg {width:100%; height:auto; border-top-right-radius:5px; border-top-left-radius:5px; background-color:#fff;}
+.warning_content {width:83.75%; height:auto; margin:0 auto;}
+.warning_content p {color:#483334; font-size:18px; text-align:center;}
+.warning_text_pd01 {padding-bottom:19px;}
+.warning_text_pd02 {padding-bottom:43px;}
+.warning_text_box {width:auto; height:auto; padding-right:6.71875%; padding-left:6.71875%; background-color:#fff; text-align:left;}
+.warning_text_box p {width:100%; padding:5px 0; border-top:1px solid #b6bcbf; color:#374148; font-size:14px; letter-spacing:-1px;}
+.warning_text_box .text_bottom {border-bottom:1px solid #b6bcbf;}
+.reason_box {width:83.75%; height:auto; margin:0 auto; overflow:hidden;}
+.reason_header {width:100%; height:23px; border-bottom:2px solid #393e4b; border-top-right-radius:10px; border-top-left-radius:10px; background-color:#515765; color:#fff; font-size:12px; text-align:center; line-height:23px;}
+.resson_text_box {width:auto; height:auto; margin-bottom:40px; padding:8px 15px; overflow:hidden; border-right:1px solid #b6bcbf; border-bottom:1px solid #b6bcbf; border-left:1px solid #b6bcbf; border-bottom-right-radius:5px; border-bottom-left-radius:5px; background-color:#efebe0; text-align:left;}
+.resson_text_box p {color:#374148; font-size:12px;}
+.resson_text_box p span {color:#f00000;}
+.warning_btn_box {width:100%; height:120px;}
+.warning_btn {display:block; margin:0 auto; padding-top:14px;}
+.profile_mody_box { width:100%; height:30px; text-align:center; background-color:#fccece; color:#f00000; font-size:14px; line-height:30px;  }
+.profile_mody {color:#f00000;}
+/* 52_53페이지 이용권관리_알림설정 */
+.alarm_box {width:94.375%; height:auto; margin:0 auto; overflow:hidden;}
+.new_msg {width:auto; height:47px; margin-top:22px; border:1px solid #b6bcbf; border-radius:10px; background-color:#fff; line-height:47px;}
+.alarm_box p {padding-top:8px; padding-left:18px; color:#727272; font-size:13px;}
+.add_sub {padding-left:17px; color:#263238; font-size:14px;}
+.color_date {color:#483334;}
+.add_date {padding-left:10px; font-size:14px; letter-spacing:-1px;}
+.css-label_alarm {display:inline-block; height:28px; margin-top:9px; margin-right:13px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+label.css-label_alarm {background-image:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img/join_check.png');}
+.btn_add {display:block; margin:0 auto; padding-top:36px;}
+.add_btn_buy {display:block; float:right; padding-top:12px; padding-right:11px;}
+.buy_history_wrap {width:94.375%; height:auto; margin:0 auto; margin-top:16px;}
+.buy_history_box {width:100%; height:auto; overflow:hidden; border:1px solid #b6bcbf; border-radius:5px; background-color:#fff;}
+.buy_history_notice {padding:8px 17px; border-bottom:1px solid #d3d3d3; color:#727272; font-size:13px;}
+.buy_date {width:49%; height:auto; margin-left:1%; overflow:hidden;}
+.buy_history {width:49%; height:auto; margin-right:1%; overflow:hidden;}
+.buy_header_txt {width:100%; height:35px; border-bottom:1px solid #483334; color:#263238; font-size:13px; text-align:center; line-height:35px;}
+.buy_txt {width:100%; height:34px; border-bottom:1px solid #dedede; color:#636363; font-size:13px; line-height:34px;}
+.btn_buy_x {float:right; margin-top:10px; margin-right:9.75609756097561%;}
+.buy_last_txt {width:100%; height:34px; color:#636363; font-size:13px; line-height:34px;}
+/* 56페이지 일대일 문의 */
+.cs_wrap {clear:both; width:100%; height:auto; overflow:hidden; border-bottom:1px solid #d0d0d1; background-color:#fff;}
+.select_box_cs {clear:both; width:100%; height:auto; padding-top:10px; padding-bottom:10px; overflow:hidden;}
+.select_dropbox_add {width:95%; height:38px; margin:0 auto; border:1px solid #d3d3d3; border-radius:3px;}
+.select_ment_add {display:block; margin-left:11px; color:#727272; font-size:14px; line-height:38px; letter-spacing:-1px;}
+.cs_photobox_wrap {position:relative; display:block; width:160px; height:auto; margin:0 auto;}
+.cs_photobox_wrap .p_x {position:absolute; top:-10px; right:-5px;}
+.cs_p_box {display:inline-block; width:150px; height:106px; border:1px solid #b6bcbf; border-radius:5px;}
+.cs_p_box img {margin-top:8px; margin-left:7px; border:1px solid #b6bcbf;}
+.cs_txt {width:95%; margin:0 auto; margin-top:8px; padding-bottom:10px; color:#424a5e; font-size:14px; text-align:center; letter-spacing:-0.5px;}
+.btn_cs {display:block; width:27.50%; height:33px; margin:10px auto; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); text-align:center; line-height:33px;}
+/* 49페이지 더보기메인 */
+.add_wrap_box {width:100%; height:auto; overflow:hidden; background-color:#fff;}
+.add_wrap_box ul li {float:left; width:25%; height:97px;}
+.add_wrap_box .addlook_img {display:block; margin:0 auto;}
+.add_img_pd01 {padding-top:21px; padding-bottom:21px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd02 {padding-top:21px; padding-bottom:20px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd03 {padding-top:18px; padding-bottom:18px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd04 {padding-top:21px; padding-bottom:19px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd05 {padding-top:22px; padding-bottom:20px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd06 {padding-top:17px; padding-bottom:18px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd07 {padding-top:19px; padding-bottom:20px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd08 {padding-top:18px; padding-bottom:17px;} /* [일감2173]관련- padding-top수정 */
+.add_img_pd09 {padding-top:20px; padding-bottom:23px;} /* 일감[442] 휴면설정추가 */ /* [일감2173]관련- padding-top수정 */
+.horizontal_add {width:100%; height:97px; margin:0; padding:0; border-bottom:1px solid #d3d3d3;}
+.btn_add_menu {display:block; height:97px; border-right:1px solid #d3d3d3; color:#263238; font-size:12px; text-align:center; letter-spacing:-1px; line-height:15px;} /* [일감2173] line-height추가 */
+.btn_add_menu .tit {display:inline-block; margin:-8px 0 0 0;} /* [일감2173] 추가 _ 2줄 타이틀일시 */
+.last_menu {border:none;}
+.basic_info_box {position:relative; width:94.375%; height:auto; margin:0 auto; margin-top:21px; padding:14px 0; overflow:hidden; border:1px solid #b6bcbf; border-radius:5px; background-color:#fff;}
+.basic_info_box p {padding-bottom:8px; padding-left:17px; color:#727272; font-size:13px;}
+.btn_logout {display:block; position:absolute; top:36px; right:11px; width:59px; height:20px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); font-size:12px; text-align:center; line-height:20px;}
+.btn_change01 {display:block; position:absolute; top:12px; right:11px; width:59px; height:20px; border:1px solid #adadad; border-radius:3px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); font-size:12px; text-align:center; line-height:20px;}
+.basic_info_box02 {position:relative; width:94.375%; height:auto; margin:0 auto; margin-top:7px; padding:14px 0; overflow:hidden; border:1px solid #b6bcbf; border-radius:5px; background-color:#fff;}
+.basic_info_box02 p {padding-left:17px; color:#715247; font-size:13px;}
+.basic_area_drop {position:absolute; top:9px; width:25.82781456953642%; height:27px; padding-bottom:3px; padding-left:3px; border:1px solid #b6bcbf; border-radius:5px; background-color:#fff; font-family:notokr_m;}
+.dropbox_left01 {left:16.887417218543046%;}
+.dropbox_left02 {left:45.033112582781456%;}
+.password_reset {display:block; height:32px; margin-top:10px; color:#5b6369; font-size:12px; line-height:32px;}
+.basic_info_txt {padding-left:17px;}
+.basic_password_form {position:relative; float:right; width:58%; height:30px; margin-right:11px; padding-left:5px; border:1px solid #d3d3d3; border-radius:3px; background-color:#fff;}
+.secret_txt {position:absolute; top:0; left:5px;}
+.phone_number {padding-left:11.920529801324504%; color:#263238;}
+@media (min-width:360px) {
+.basic_info_txt {padding-left:27px;}
+.basic_password_form { width:62.251655629139066%; }
+}
+/* 54페이지_더보기_공지사항 */
+.add_notic_wrap {width:100%; height:auto; overflow:hidden; background-color:#fff;}
+.notice_list {position:relative; width:100%; height:60px; border-bottom:1px solid #b6bcbf;}
+.notice_txt_box {width:82.65625%; height:35px; padding:13px 0 13px 16px; color:#374148; font-size:14px; letter-spacing:-1px;}
+.notice_txt_lineheight {line-height:35px;}
+.notice_txt_box .notice_arrow01 {position:absolute; top:23px; right:17px;}
+.wt_date {padding-left:10px; color:#919191; font-size:12px;}
+.notice_content {width:100%; height:auto; overflow:hidden; border-bottom:1px solid #b6bcbf; background-color:#f3f4f6;}
+.notice_content_txt {width:89.375%; margin:0 auto;}
+.notice_content_txt p {padding:9px 3px; color:#374148; font-size:12px;}
+/* 55페이지_더보기_고객센터 */
+.cs_center_wrap {width:100%; height:auto; overflow:hidden; border-bottom:1px solid #d3d3d3; background-color:#fff;}
+.cs_content {width:89.375%; height:auto; margin:0 auto; overflow:hidden;}
+.cs_title {display:block; margin:0 auto; margin-top:10px; margin-bottom:10px;} /* 성혼환불 수정 */
+.cs_txt01 {padding:9px 9px; color:#263238; font-size:13px;} /* 성혼환불 수정 */
+.cs_call_box {width:100%; height:80px; margin-bottom:28px; padding:13px 9px; border-top:2px solid #e4e1e1; border-bottom:2px solid #e4e1e1;}
+.cs_call_box p {color:#111; font-size:13px;}
+.cs_call_box p span {color:#374148; font-size:13px;}
+.span_pd01 {padding-left:34px;}
+.span_pd02 {padding-left:45px;}
+.span_pd03 {padding-left:15px;}
+.cs_call_pd {padding-bottom:11px;}
+.cs_logo_img {display:block; margin:0 auto; padding-top:6px;}
+/* 57페이지 내 문의내역 보기 */
+.inquiry_wrap {width:100%; height:auto; overflow:hidden; background-color:#e2e2e2;}
+.notice_ment {height:42px; padding-left:2.96875%; border-bottom:1px solid #d0d0d1; background-color:#fff; color:#424a5e; font-size:14px; line-height:42px; letter-spacing:-1px;}
+.inquiry_box {position:relative; clear:both; width:100%; height:65px; border-top:1px solid #fff; border-bottom:1px solid #d0d0d1; background-color:#e2e2e2;}
+.ico_answer {display:inline-block; margin-top:1px; margin-left:5px; vertical-align:middle;}
+.inquiry_txt_box {width:89.375%; height:32px; padding:10px 0 8px 8px; color:#374148; font-size:14px; letter-spacing:-1px;}
+.inquiry_txt_lineheight {line-height:32px;}
+.inquiry_arrow01 {position:absolute; top:27px; right:7px;}
+.inquiry_date {padding-left:10px; color:#919191; font-size:12px;}
+.inquiry_answer_box {clear:both; width:100%; height:auto; overflow:hidden; background-color:#f3f2f2;}
+.answer_box {width:89.375%; margin:0 auto;}
+.answer_box p {padding:10px 6px; color:#727272; font-size:14px;}
+.answer_photo_box {width:269px; height:149px; margin:0 auto; margin-bottom:15px; border:1px solid #beb7a9; background-color:#fff;}
+.answer_photo_box img {display:inline-block; width:266px; height:146px; padding-top:2px; padding-left:2px;}
+.cs_answer_box {width:100%; height:auto; overflow:hidden; border-top:1px dashed #adadad; border-bottom:1px solid #d0d0d1; background-color:#f3f2f2;}
+.cs_titledate {padding:15px 11px; color:#727272; font-size:14px; letter-spacing:-1px;}
+.cs_titledate span {color:#111; font-size:14px;}
+
+#moreBtn {clear:both;margin:-10px 0 0 0;padding:0 10px 0 6px;height:45px;display:none}
+#moreBtn .appBtn {display:inline-block;height:34px;line-height:34px;text-align:center;border-radius:4px;width:100%;font-size:1.2em;font-weight:bold;letter-spacing:-1px;border:solid 2px #adadad;-webkit-box-shadow:inset 1px 1px 0 rgba(255,255,255,0.2),inset -1px -1px 0 rgba(255,255,255,0.2);box-shadow:inset 1px 1px 0 rgba(255,255,255,0.2),inset -1px -1px 0 rgba(255,255,255,0.2);background-color:#f5f5f5;background-image:-webkit-gradient(linear,left top,left bottom,from(#fefefe),to(#ececec));background-image:-moz-linear-gradient(top,#fefefe,#ececec);background-image:-o-linear-gradient(top,#fefefe,#ececec);background-image:linear-gradient(to bottom,#fefefe,#ececec)}
+
+.wedding_wrap {width:100%; height:auto; background-color:#fff;}
+.body_wrap {width:100%; height:auto; background-color:#eee;}
+
+/* 휴대폰인증 */
+.form_box {padding-left:9px; border:none; border-radius:5px; background:#FFF; font-size:14px; font-family:NotoSansKR-Regular; line-height:42px; word-wrap:break-word;}
+.form_box_none {padding-left:9px; border:none; border-radius:5px; background:#fbc2c2; box-shadow:inset 0 0 0 1px #ef3e3e; font-size:14px; line-height:42px; word-wrap:break-word;}
+.email_on {width:97.2%; height:42px;}
+.login_btn {display:block; width:101.2%; height:34px; border-radius:5px; font-size:20px; text-align:center; line-height:34px;}
+.login_btn_margin01 {margin-top:26px; margin-bottom:34px;  }
+.login_btn_margin02 {margin-top:31px; }
+.login_btn_margin03 {margin-top:11px; }
+.login_btn_color {background-color:#374148; color:#ffc107;}
+.login_btn_join {display:block; width:40.47619%; height:32px; margin:0 auto; margin-top:17px; border:1px solid #e5e5e5; border-radius:3px; background:#fff; text-align:center; line-height:32px;}
+.join_btn_color {background-color:#8d695a; color:#fff;}
+.gray_btn_color {background-color:#aaa; color:#fff;}
+.login_form {display:block; position:relative; clear:both; width:100%; height:42px; margin-bottom:11px;}
+
+/* photo layer */
+#photo_save_ly {display:none;position:fixed;top:50%;margin-top:-126px;z-index:20}
+#photo_save_ly .photo_alarm_box {border-radius:5px;text-align:center}
+.alarm_margin_top {margin-top:10px;}
+.confirm_photo {display:inline-block; clear:both; padding-top:5px; color:#818181; font-size:14px; letter-spacing:-1px;}
+.confirm_photo .confirm_txt {color:#4f6dc1;}
+.confirm_photo .max_txt {color:#b80a0e;}
+
+/* span image */
+#spin_ly_bg {position:fixed;top:0;left:0;width:100%;height:100%;z-index:206;opacity:.7;filter:alpha(opacity=70);background:#333}
+#spin_ly {position:fixed;top:50%;left:50%;margin-top:-50px;margin-left:-60px;width:140px;height:100px;background:#fcfcfc;text-align:center;border-radius:5px;z-index:208}
+#spin_ly img.nomsg {margin-top:13px}
+#spin_ly span {display:block;font-size:0.7em;color:#cc0000}
+
+#spin_ly2 {position:fixed;top:50%;left:50%;margin-top:-15px;margin-left:-15px;width:30px;height:30px;overflow:hidden;background:url('https://image.yeoboya.com/imgs/new_wedding/mobile/img2/loding_prog.png')}
+
+/* 안드로이드 push 대응 CSS */
+#pushFloat {position:fixed; bottom:55px; width:100%; z-index:98; text-align:left;}
+#pushFloat .pushBox {position:absolute; bottom:0px; z-index:9; display:block; left:-160px; padding:0px 0px 10px 0px; width:154px; text-align:center; background:#fff; color:#333; border:3px solid #505050; transform:translate(0,0); backface-visibility:hidden; transition-duration:300ms; -webkit-transform:translate(0,0); -webkit-backface-visibility:hidden; -webkit-transition-duration:300ms;}
+#pushFloat .pushBox h3{color:#674311; padding:6px 0 6px 0; margin:0; font-weight:bold; font-size:1em; line-height:1.1em; background:#fff600 url('https://image.club5678.com/imgs/mobile/130417/ico_alim.png') no-repeat 45px 5px; background-size:16px 16px;}
+#pushFloat .pushBox p{background:#fff; color:#111; padding:10px; letter-spacing:-1px; font-size:0.875em;}
+#pushFloat .pushBox a {display:inline-block; text-align: center;color: #333;padding:5px 15px;font-size: 0.875em;font-weight: bold;border: 1px #adadad solid;border-radius: 4px;-webkit-box-shadow: inset 1px 1px 0 rgba(255,255,255,0.1), inset -1px -1px 0 rgba(255,255,255,0.1);box-shadow: inset 1px 1px 0 rgba(255,255,255,0.1), inset -1px -1px 0 rgba(255,255,255,0.1);background-color: #f5f5f5;background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#ebebeb));background-image: -moz-linear-gradient(top, #fefefe, #ebebeb);background-image: -o-linear-gradient(top, #fefefe, #ebebeb);background-image: linear-gradient(to bottom, #fefefe, #ebebeb)}
+#pushFloat span.bugFix {display:inline-block; width:0; height:0; text-indent:-9999px;}
+
+.msgLayer {position:fixed;top:40px;left:3.125%;z-index:94}
+
+/* 헨드폰인증 수정사항 */
+.notice_join_txt01 { font-size:14px; text-align:center; }
+.idform_txt_color {color:#7a7a7a;}
+
+
+/* 시크릿  홍보레이어 */
+.pop_scrt {display:inline-table; position:absolute; width:90%; height:auto; top:0; left:0; right:0; bottom:0; margin:auto; box-sizing:border-box; z-index:9999}
+.pop_scrt .scrt_bg {display:block; width:100%; height:auto; margin:0 auto; box-shadow:0px 0px 20px #7b7b7b;}
+.pop_scrt .btn_close2 {position:absolute; top:0; right:0; width:14%; height:10%;}
+.pop_scrt .btn_close2 a {display:block; width:100%; height:100%; margin:0; padding:0; background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/secret/btn_scrt_clse.png) no-repeat 70% 30%; background-size:40%; font-size:0;}
+.pop_scrt .btn_scrt_go {position:absolute; bottom:4.5%; left:13%; width:74%; height:auto; margin:0 auto; padding:0;}
+.pop_scrt .btn_scrt_go img {display:block; width:100%; height:auto; margin:0 auto; padding:0;}
+@media(min-width:450px){
+ .pop_scrt {width:400px}
+}
+
+/* 시크릿 알림창 2017-04-27 */
+.pop_secert_wrap{position:fixed; top:50%; left:0; width:90%; height:auto; margin:-100px 5% 0 5%; border-radius:5px; background: #fcebed; background: -moz-linear-gradient(top, #fcebed 0%, #e2e6ee 100%); background: -webkit-linear-gradient(top, #fcebed 0%,#e2e6ee 100%); background: linear-gradient(to bottom, #fcebed 0%,#e2e6ee 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcebed', endColorstr='#e2e6ee',GradientType=0 ); box-shadow:3px 3px 6px rgba(0,0,0,0.3);}
+.pop_secert_header{position:relative; width:100%; height:auto;}
+.pop_secert_header .scrt_logo{width:100%; height:40px; background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/secret/logo_scrt.png) no-repeat center 6px; background-size:53px 30px; text-indent:-9999px;}
+.pop_secert_header .scrt_accep_header{width:80%; height:30px; line-height:30px; margin:0px 10%; border-radius:5px; background-color:#2b7d59; color:#fff; font-size:16px; text-align:center;}
+.pop_secert_header .scrt_requ_header{width:80%; height:30px; line-height:30px; margin:0px 10%; border-radius:5px; background-color:#524f8e; color:#fff; font-size:16px; text-align:center;}
+.pop_secert_container{position:relative; width:100%; height:auto; padding:7px 10px; box-sizing:border-box; text-align:center;}
+.pop_secert_container .photo_box{position:relative; width:54px; height:54px; display:inline-block;}
+.pop_secert_container .profile_img{width:100%; height:100%; border-radius:27px;}
+.pop_secert_container .mark_wed{position:absolute; top:47px; left:10px;}
+.pop_secert_container .scrt_u{position:relative; width:auto; height:auto; display:inline-block; margin:0px; padding:0px 0px 0px 10px;}
+.pop_secert_container .scrt_u li{position:relative; width:auto; height:18px; line-height:18px; color:#5d5d5d; font-size:14px; text-align:left;}
+.pop_secert_container .fc_black{color:#3a3a3a;}
+.pop_secert_container .fc_female{color:#f4716A;}
+.pop_secert_container .fc_male{color:#2891B6;}
+.pop_secert_btn_box{position:relative; width:100%; height:auto; padding:10px; box-sizing:border-box;}
+.pop_secert_btn_box:after{content:""; display:block; clear:both;}
+.pop_secert_btn_box .pop_secert_btn_clse{width:45%; height:33px; line-height:33px; border-radius:5px; background-color:#8c8b97; float:left;}
+.pop_secert_btn_box .pop_secert_btn_confirm{width:45%; height:35px; line-height:35px; border-radius:5px; background-color:#be4a82; float:right;}
+.pop_secert_btn_box .pop_secert_btn_clse a, .pop_secert_btn_box .pop_secert_btn_confirm a{display:block; width:100%; height:100%; color:#fff; text-align:center; font-size:16px}
+.pop_secert_btn_box .pop_secert_btn_clse a:active, .pop_secert_btn_box .pop_secert_btn_confirm a:active{background:rgba(0,0,0,0.05);}
+
+/* 내정보 아이패드깨짐 수정 */
+@media (min-width:768px) {
+.profile_detail_txtbox {height: 88px !important;}
+}
+
+/* 170704 전체리스트&시간표기 수정 */
+.tap_box_interest{overflow:hidden;}
+.tab_on_st2 img, .tab_off_st2 img{display:block; position:relative; top:8px; margin:0 auto; padding-bottom:5px;}
+.tab_on_st2{display:inline-block; float:left; position:relative; width:34%; height:49px; background:#fff7ee; border-bottom:2px solid #473335; box-sizing:border-box; color:#473335; font-size:13px; letter-spacing:-1px; text-align:center; line-height:31px;}
+.tab_off_st2{display:inline-block; float:left; position:relative; width:34%; height:49px; border-bottom:1px solid #d0d0d3; box-sizing:border-box; color:#949393; font-size:13px; letter-spacing:-1px; text-align:center; line-height:31px;}
+.ico_clock{display:inline-block; height:16px; line-height:16px; background:url(https://image.yeoboya.com/imgs/new_wedding/img/ico_clock_gray2.png) left top no-repeat; background-size:16px 16px; padding-left:18px; padding-right:3px;}
+.ico_pro_open{position:relative; top:4px;} /*프로필열람뱃지*/
+.open_info_red{color:#e3361f;}
+.open_info_bro{color:#473332;}
+.lst_info_badge{position:relative; top:2px; padding-right:3px;}
+
+@media(min-width:360px){
+.p_send_date{padding-left:5px;}
+}
+
+/* 170706 리스트 날짜표기 수정 */
+.day_line2{position:relative; height:3px; margin:10px 0 6px 0; background:#bbbbbb; font-size:12px; text-align:center; line-height:15px;}
+#dateyyyymmdd{position:relative; top:-6px; padding:0 6px; box-sizing:border-box; background:#fff;}
+
+/* 170707 보더class 추가 */
+.lst_border_gray{border-top:1px solid #bababa;}
+.top_line_bar {width: 40%;display:block;margin: 0 auto;height: 1px;background: #bababa; }
+
+/* 남성 신규회원 프로필 등록 유도 알림창(180416 정우아) */
+.item_pop{width:300px!important; height:auto; margin-top:-160px; margin-left:-150px;}
+.free_item_box_wrap{position:relative; width:100%; height:auto; box-sizing:border-box; padding:0 22px; margin-top:10px;}
+.free_item_box{position:relative; width:auto; height:auto; border:1px solid #cebee1; box-sizing:border-box; padding-left:0; margin:10px 0 20px 0;}
+.free_item_box li{border-bottom:1px solid #cebee1; height:30px; line-height:30px;}
+.free_item_box li:last-child{border-bottom:0;}
+.free_item_box .free_item_hd{margin:0;; background-color:#a177d7; box-sizing:border-box; color:#6c6c6c; font-size:14px; letter-spacing:-0.7px; width:100%;}
+.free_item_box .free_item_hd .free_icon{background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/img/item_icon.png) no-repeat 0px 2px; background-size:14px 16px; padding-left:19px; font-size:1em!important; color:#fff!important;}
+.free_item_box .left_box{float:left;}
+.free_item_box .item_list{width:60%;}
+.free_item_box .item_list2{width:40%;}
+.free_item_box .free_item_list{font-size:13px; color:#515151;}
+.free_item_box .item_num{font-size:13px!important; color:#9c66e3!important;}
+.free_regist{color:#955ce2!important;}
+/*---------------------------------------------------*/
+
+/* 한줄처리 class 추가 */
+.util_ellipsis{display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+
+/* 히든 추가 */
+.hidden{display:none;}
+
+/*여보야 공유하기 팝업*/
+.f_share_allim_dimmed{position:fixed; z-index:50; width:100%; height:100%;}
+.f_share_allim{position:relative; top:50%; left:50%; width:282px; height:204px; margin:-98px 0 0 -141px; text-align:center; background-color:#ff9e5c; border-radius:5px;}
+.f_share_allim .pop_share_area{position:relative; width:100%; height:152px; background:#ff9e5c url(https://image.yeoboya.com/imgs/new_wedding/pop/pop_flag2.png) no-repeat 0 0; background-size:282px 50px; box-sizing:border-box; padding-top:17px; border-radius:5px 5px 0 0;}
+.f_share_allim .pop_share_area .share_title_wrap{position:relative; width:172px; height:76px; background-color:#fff7ed; border:3px solid #000; -webkit-border-radius:6px; border-radius:6px; box-sizing:border-box; margin:0 auto; padding-top:11px; font-size:0;}
+.f_share_allim .pop_share_area .share_title_wrap .title_top{width:95px; height:21px; display:block; text-align:center; margin:0 auto;}
+.f_share_allim .pop_share_area .share_title_wrap .txt_num{font-size:21px; color:#ff5d16; font-weight:800;}    
+.f_share_allim .pop_share_area .share_title_wrap .title_bottom{width:88px; height:17px; padding-left:2px;}
+.f_share_allim .pop_share_area .share_ment{font-size:14.3px; color:#0d0501; font-weight:600; padding-top:12px; line-height:17px; letter-spacing:-0.3px;}
+.f_share_allim .pop_share_btn{width:282px; height:52px; line-height:52px; background:#fff7ed url(https://image.yeoboya.com/imgs/new_wedding/pop/deco_top.png) no-repeat 0 top; background-size:282px 4px; text-align:center; border-radius:0 0 5px 5px;}
+.f_share_allim .pop_share_btn a{ display:block; width:100%; height:100%;}
+.f_share_allim .pop_share_btn a .share_txt{padding-left:26px; background:url(https://image.yeoboya.com/imgs/new_wedding/pop/icon_share.png) no-repeat 0 4px; background-size:22px 22px; font-size:18px; font-weight:600; color:#000;}
+
+/*-----일감2653 남녀 선호, 기피이성 추가안-----*/
+/*프로필설정 바닥*/
+.select_box_04{clear:both; width:100%; height:auto; padding:0 8px 8px 8px; box-sizing:border-box; text-align:left;}
+.title_wid100{position:relative; width:100%; height:44px; line-height:44px; font-size:14px; box-sizing:border-box;}
+.prime_mark_06{background:url(https://image.yeoboya.com/imgs/new_wedding/prime/img_prime_secret.jpg) no-repeat left center; background-size:228px 24px; line-height:44px; width:227px!important;}
+.title_wid100 .slct_like{display:inline-block; width:70px; height:32px; line-height:32px; box-sizing:border-box; text-align:center;}
+.title_wid100 .slct_like a{display:block; width:100%; height:100%; box-sizing:border-box; text-indent:-9999px; background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/img/taste_btn.png) no-repeat 0 0; background-size:70px 32px;}
+.title_wid100 .slct_like .blink_btn{background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/img/blink_btn.gif) no-repeat 0 0; background-size:70px 32px;}
+.select_box_04 .taste_list{position:relative; width:100%; height:auto; padding:8px 3px 0 8px; box-sizing:border-box; border:1px solid #d5d5d5; border-radius:3px;}
+.select_box_04 .taste_list:after{content:''; display:block; clear:both;}    
+.select_box_04 .taste_list .taste_content{float:left; width:auto; height:auto; font-size:13px; padding:2px 5px; box-sizing:border-box; border-radius:5px; margin-right:5px; font-weight:600; margin-bottom:8px; color:#7c4fbf; line-height:20px; border:1px solid #ab89c5;}
+/*선호,기피이성 선택팝업*/
+.pop_taste_wrap{position:fixed; z-index:1000; top:0; left:0; right:0; bottom:0; width:100%; height:100%;}
+.pop_taste_modal{position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%; background:rgba(0,0,0,0.6);}
+.pop_taste_wrap .taste_bg_wrap{position:relative; width:306px; height:auto; margin:0 auto; background-color:#fff; border-radius:3px; box-shadow:0 3px 6px rgba(0,0,0,0.3); -webkit-box-shadow:0 3px 6px rgba(0,0,0,0.3); -ms-box-shadow:0 3px 6px rgba(0,0,0,0.3); -moz-box-shadow:0 3px 6px rgba(0,0,0,0.3); -o-box-shadow:0 3px 6px rgba(0,0,0,0.3); background-clip:padding-box; top:50%; left:50%; margin-left:-153px; margin-top:-202px;}
+.pop_taste_wrap .taste_bg_wrap .taste_header{position:absolute; width:100%; height:45px;  box-sizing:border-box; line-height:45px; background-color:#7f5cb5; z-index:10; border-radius:3px 3px 0 0; overflow:hidden;}
+.taste_bg_wrap .taste_header .taste_layer_title{font-size:16px; color:#fff; font-weight:600; padding:0 12px; margin:0;}
+.taste_bg_wrap .taste_header .tit_sub{font-size:14px; margin-left:3px;}
+.taste_bg_wrap .taste_header .taste_layer_clse{position:absolute; top:0; right:0; width:70px; height:45px; background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/img/taste_close.png) no-repeat 40px center; background-size:17px 17px;}
+.taste_bg_wrap .taste_header .taste_layer_clse a{display:block; width:100%; height:100%; box-sizing:border-box; text-indent:-9999px;}
+.taste_bg_wrap .taste_slct_wrap{position:relative; width:100%; height:auto; margin:0; padding-top:45px;}
+.taste_bg_wrap .taste_slct_wrap .taste_visible{overflow-x:hidden; overflow-y:auto; height:304px;}
+.taste_bg_wrap .taste_slct_wrap .taste_visible::-webkit-scrollbar{width:5px;}
+.taste_bg_wrap .taste_slct_wrap .taste_visible::-webkit-scrollbar-track-piece{background:#d8d8d8;}
+.taste_bg_wrap .taste_slct_wrap .taste_visible::-webkit-scrollbar-thumb{background:#a387ce;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul{position:relative; width:100%; height:auto; margin:0; box-sizing:border-box; padding:12px 0px 0px 13px;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul:after{display:block; content:''; clear:both;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul .taste_li{position:relative; float:left; width:auto; height:38px; text-align:center; font-size:14px; margin:0px 8px 8px 0px; box-sizing:border-box;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul .taste_li .taste_chk{display:block; position: absolute; left:0; top:0; width:100%; height:100%; opacity:0; cursor:pointer;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul .taste_li .taste_chk_lb{display:block; width:100%; height:38px; line-height:34px; padding:0 5px; box-sizing:border-box; text-align:center; border-radius:5px; border:1px solid #757575;}
+.taste_bg_wrap .taste_slct_wrap .taste_ul .taste_li .taste_chk_lb .taste_txt{font-size:14px; color:#151515; letter-spacing:-0.5px;}
+.taste_slct_wrap .taste_ul .taste_li .taste_chk:checked + .taste_chk_lb{background:#7f5cb5; border:1px solid #6c4f98;}
+.taste_slct_wrap .taste_ul .taste_li .taste_chk:checked + .taste_chk_lb .taste_txt{color:#fff; font-weight:600; box-sizing:border-box; letter-spacing:-0.7px;}
+/*선택완료 버튼*/
+.taste_slct_wrap .slct_btn_box{position:relative; width:100%; height:auto; border-radius:0 0 3px 3px; overflow:hidden;}
+.taste_slct_wrap .slct_btn_box .btn_ok{display:block; width:100%; height:44px; line-height:44px; background-color:#f1f1f1; font-size:15px; font-weight:600; text-align:center; border-top:1px solid #d0d0d0; box-sizing:border-box; color:#353535; cursor:pointer;}
+.taste_slct_wrap .slct_btn_box .btn_ok:active{background-color:#e4e4e4;}
+/*프로필 뷰*/
+.p_taste_list{position:relative; width:100%; height:auto; padding:8px 0 0 0!important; box-sizing:border-box;}
+.p_taste_list .p_taste_content{float:left; width:auto; height:auto; font-size:13px!important; padding:2px 5px!important; box-sizing:border-box; border-radius:5px; margin-right:5px; border:1px solid #ab89c5; margin-bottom:8px; color:#7c4fbf!important; line-height:20px!important;}
+.p_taste_list .p_taste_empty{margin-top:-8px;}
+.info_text .badge_new{display:inline-block; position:relative; width:28px; height:15px; margin:-3px 0 0 5px; background: url(https://image.yeoboya.com/imgs/new_wedding/mobile/thanks/badge_new.png) no-repeat 0 0; background-size:cover; vertical-align:middle;}
+
+/*----- 일감 2895 프로필 머문시간 추가 -----*/
+
+.noti_stay {display:inline-block; padding-top:5px; padding-left:12px; color:#090909; font-size:13px;}
+.staytime_noty { position:absolute; top:3px; right:7px; }
+.rd_staytime {display:inline-block; padding-top:5px; padding-left:12px; color:#797979; font-size:12px;}
+.ico_stay {display:inline-block; height:16px; line-height:16px; background:url(https://image.yeoboya.com/imgs/new_wedding/img/ico_staytime.png) left top no-repeat; background-size:16px 16px; padding-left:18px; padding-right:3px; }
+.ico_stay_b {display:inline-block; height:16px; line-height:16px; background:url(https://image.yeoboya.com/imgs/new_wedding/img/ico_staytime_b.png) left top no-repeat; background-size:16px 16px; padding-left:18px; padding-right:3px; }
+
+/*----- 이벤트-봄꽃받음 알림-----*/
+.tree_get_pop_wrap{display:none; position:fixed; top:0; left:0; width:100%; height:68px; z-index:3000;}
+.tree_get_pop{position:relative; width:100%; height:100%; box-sizing:border-box; background:#f9779f url(https://image.yeoboya.com/imgs/new_wedding/mobile/flower/flower_line.png) repeat-x 0px 0px; background-size:87px 19px; box-shadow:1px 2px 3px rgba(0,0,0,0.4);}
+.tree_get_pc_pop{width:718px; margin:0 auto;}
+.tree_get_pop a{display:block; width:inherit; height:auto;}
+.tree_get_pop .tree_get_content{background:url(https://image.yeoboya.com/imgs/new_wedding/mobile/flower/toast_flower.png) no-repeat 12px 24px; background-size:33px 35px; height:100%; font-size:14px; color:#fff; padding:23px 0 0 56px; box-sizing:border-box;}
+.tree_get_pop .tree_get_content .tree_gift{line-height:18px;}
+.tree_get_pop .tree_get_content .tree_gift .tree_nickname{color:#fff;}
+.tree_get_pop .tree_get_content .tree_gift .tree_number{color:#fff6b1; font-weight:600;}
+.tree_get_clse{position:absolute; width:62px; height:34px; line-height:32px; top:25px; right:10px; text-align:center;}
+.tree_get_clse a{display:block; width:100%; height:34px; box-sizing:border-box; background:#fff6f7; font-size:14px; color:#524242; border-radius:5px; font-weight:600;}
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slide_down{
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+  -webkit-animation-duration:0.4s;
+  animation-duration:0.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* 스페셜 자기소개(동영상,목소리) 재생시간표시 */
+.vd_play_time {display: block; position:absolute; bottom:0; left: 0; width:100%; line-height:19px; background:rgba(0,0,0,.7); color:#fff; font-size:13px; text-align: center; }
+.vc_play_time {display: block; position:absolute; bottom:0; left: 0; width:100%; line-height:19px; background:rgba(0,0,0,.7); color:#fff; font-size:13px; text-align: center; }
+
+/*신고관련*/
+.last_li .report_video_ex{cursor:pointer; display:block; position:relative; width:120px; height:96px; top:0; left:0; object-fit:cover;}
+.last_li .report_video_play{position:absolute;top:15px; left:110px; width:24px; height:24px;}
+.last_li .report_video_time{position:absolute; width:64px; height:20px; background-color:rgba(0,0,0,0.7); border-top-left-radius:10px; border-top-right-radius:10px; border-bottom-left-radius:10px; border-bottom-right-radius:10px; color:#fff; font-size:12px; font-weight:300; line-height:20px; text-align:center; bottom:14px; left:72px; z-index:1000;}

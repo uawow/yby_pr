@@ -1,0 +1,307 @@
+<html lang="ko"><head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="https://image.yeoboya.com/imgs/new_wedding/mobile/img/favicon_16.ico" type="image/x-icon">
+<link rel="icon" href="https://image.yeoboya.com/imgs/new_wedding/mobile/img/favicon_16.ico" type="image/x-icon">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="ALL">
+<meta name="robots" content="index,follow">
+<meta name="revisit-after" content="1 days">
+<meta name="Subject" content="여보야">
+<meta name="description" content="결혼, 재혼, 배우자를 찾는 스마트한 방법, 가입비 주선비 성혼비 무료, 여성결혼대상자 무료, 문의 1522-3379">
+<meta name="keywords" content="결혼, 재혼, 결혼어플, 소개팅어플, 소개팅">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="HandheldFriendly" content="true">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<title>여보야</title>
+<link href="css/webfont.min2.css" rel="stylesheet" type="text/css">
+<link href="css/default.css" rel="stylesheet" type="text/css">
+<link href="css/notice.css" rel="stylesheet" type="text/css">
+<style>
+#imgSpinBg {position:fixed;width:100%;height:100%;background:rgba(0,0,0,0.7);top:0;}
+#imgSpin {position:fixed;top:50%;left:50%;margin-top:-36px;margin-left:-36px;width:72px;height:72px;}
+@-webkit-keyframes flip /* Safari and Chrome */ {
+  from {
+    -ms-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -ms-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@keyframes flip {
+  from {
+    -ms-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -ms-transform: rotateY(360deg);
+    -moz-transform: rotateY(360deg);
+    -webkit-transform: rotateY(360deg);
+    -o-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+
+.flip {    
+  -webkit-animation: flip 1.2s ease infinite;
+  -moz-animation: flip 1.2s ease infinite;
+  -ms-animation: flip 1.2s ease infinite;
+  -o-animation: flip 1.2s ease infinite;
+  animation: flip 1.2s ease infinite;
+}
+
+.btn_home{display:inline-block;}
+.btn_home{position:absolute; padding:7px 20px 2px 50px; top:0; right:0;}
+
+/* 관심있어요 메시지창 시작 */
+@import url(//fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+.interest_box { display:block; width:85%; height:auto; overflow:hidden; margin:0 auto; border-radius:5px; border:1px solid #515765; background-color:#fff; -webkit-box-shadow:0 0 10px 0 rgba(0,0,0,.5); margin-top:40px; }
+.interest_header { width:100%; height:39px; line-height:39px; background-color:#b6bcbf; }
+.interest_header p { font-family:'Nanum Brush Script', serif; font-size:24px; color:#515765; padding-left:12px; }
+.interest_content { padding:10px 5px; }
+@media (min-width:360px) {
+	.interest_content { padding:10px 10px; }
+}
+.interest_content .from_txt { font-size:15px; color:#000;}
+.interest_content .from_txt span { font-size:11px; color:#f4716a; }
+.interest_content .to_id { float:left; font-family:'Nanum Brush Script', serif; font-size:28px; color:#be6af4; padding-top:15px; padding-left:10px; letter-spacing:-1px; text-align:left; }
+.interest_content img { display:inline-block; float:right; padding-top:10px; padding-right:10px; }
+.interest_footer { clear:both; }
+.interest_footer ul { margin:0; padding:0; }
+.interest_footer ul li { display:inline; float:left; margin-top:7px; text-align:center; width:33.3%; height:33px; }
+.btn_inter_normal { display:block; background:-moz-linear-gradient(top, #fffff2 0%, #e9e3d5 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fffff2), color-stop(100%,#e9e3d5)); background:-webkit-linear-gradient(top, #fffff2 0%,#e9e3d5 100%); background:-o-linear-gradient(top, #fffff2 0%,#e9e3d5 100%); background:-ms-linear-gradient(top, #fffff2 0%,#e9e3d5 100%); background:linear-gradient(to bottom, #fffff2 0%,#e9e3d5 100%); width:90%; margin:0 auto; margin-left:10px; border-radius:5px; border:1px solid #bdbdbb; font-size:12px; line-height:25px; text-align:center; color:#515765; letter-spacing:-1px; }
+.btn_inter_close {display:block;  background:-webkit-linear-gradient(top, #fff 0%,#ededed 100%); background:-o-linear-gradient(top, #fff 0%,#ededed 100%); background:-ms-linear-gradient(top, #fff 0%,#ededed 100%); background:linear-gradient(to bottom, #fff 0%,#ededed 100%); width:72%; margin:0 auto; margin-right:5px; border-radius:5px; border:1px solid #bdbdbb; font-size:12px; line-height:25px; text-align:center; color:#515765; letter-spacing:-1px; }
+/* 관심있어요 메시지창 끝 */
+.send_btn_mg_right03 {margin-right:4px;}
+
+/* 남성관심있어요 추가 */
+.interest_header_man { width:100%; height:39px; line-height:39px; background-color:#8292f1; }
+.interest_header_man .header_man { font-family:'Nanum Brush Script', serif; font-size:24px; color:#fff; padding-left:12px; }
+.txt_man_color { color:#39b1dd !important; }
+.to_id_man { color:#4159e7 !important; }
+.man_inter_img {display:inline-block; float:right; padding-top:3px !important; padding-right:10px; }
+
+/*중매인 추가 */
+.to_profile {display:inline-block; position:absolute; top:25px; right:3px; width:50px; height:15px; border:1px solid #adadad; border-radius:5px; background:-moz-linear-gradient(top, #fefefe 0%, #ededed 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#fefefe), color-stop(100%,#ededed)); background:-webkit-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-o-linear-gradient(top, #fefefe 0%,#ededed 100%); background:-ms-linear-gradient(top, #fefefe 0%,#ededed 100%); background:linear-gradient(to bottom, #fefefe 0%,#ededed 100%); color:#666; font-size:12px; text-align:center; line-height:15px;}
+
+/* 관심있어요 애니 시작 */
+.interest_msg_wrap { display:block; width:93.75%; height:auto; background:#fff; margin-bottom:auto; top:0; margin-top:50%; z-index:24; border:1px solid #f4716f; padding-bottom:5px; left:2.9%; }
+
+.header_msg { width:100%; height:40px; text-align:center; line-height:40px; background:#f4716f; }
+.header_msg img { padding-top:7px; }
+.from_mem { width:100%; height:30px; line-height:30px; background-color:#f4e4ee; font-size:13px; color:#373737; }
+.from_mem p { padding-left:5px; font-weight:bold; }
+.nick_col_man { font-size:11px; color:#2891b6; padding-left:5px; letter-spacing:-1px; }
+@media (min-width:360px) {
+	.interest_msg_wrap { width:93.75%; }
+	.from_mem p { padding-left:10px; }
+	.nick_col_man { font-size:12px; }
+}
+.play_ani_box {display:block; text-align:center; padding:10px 0; position:relative; }
+.play_ani_box img { width:70%; height:auto; overflow:hidden; display:block; margin:0 auto; }
+.btn_touch { display:block; width:130px; height:35px; line-height:35px; border-radius:5px; background-color:rgba(0,0,0,0.5); color:#fff; text-align:center; position:absolute; margin-top:auto; margin-bottom:auto; top:0; bottom:0;left:32%; }
+.btn_touch:active {background:rgba(0,0,0,.25); }
+.interest_btn_box { width:100%; height:auto; overflow:hidden; }
+.interest_btn_box ul { margin:0; padding:0; }
+.interest_btn_box ul li { float:left; width:33.3%; height:25px; padding:5px 0; text-align:center; }
+.interest_btn_box ul li a { display:inline-block; width:85px; height:25px; line-height:25px; border-radius:3px; font-size:13px;}
+.interest_btn_box ul li a:active { background:rgba(0,0,0,.25); }
+.btn_inter_closed { background-color:#e3e3e3; color:#636363; }
+.btn_look_profile { background-color:#caa7bd; color:#fff; }
+.btn_talk { background-color:#f4716f; color:#fff; }
+
+.play_inter_ani { display:block; height:auto; margin-bottom:auto; top:0; margin-top:50%; z-index:999; left:6%; width:93.75%;}
+
+.play_ani_img { width:93.75%; height:auto; }
+.ani_black_all { position:fixed; width:100%; height:100%; left:0px; top:0px; background-color:rgba(0,0,0,0.7); z-index:25; }
+
+/************************************ 신고하기 ************************************/
+.report_wrap{position:fixed; top:15%; left:5%; width:90%; height:auto; margin:20px auto; border:1px solid #3a3030; border-radius:10px; display:none; z-index:1100;}
+.report_modal{position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:1000;display:none;}
+.report_wrap .report_header {width:100%; height:34px; border-top:1px solid #6d5859; border-bottom:1px solid #3a3030; border-top-right-radius:10px; border-top-left-radius:10px; background:-moz-linear-gradient(top, #533b3c 0%, #483334 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#533b3c), color-stop(100%,#483334)); background:-webkit-linear-gradient(top, #533b3c 0%,#483334 100%); background:-o-linear-gradient(top, #533b3c 0%,#483334 100%); background:-ms-linear-gradient(top, #533b3c 0%,#483334 100%); line-height:34px; letter-spacing:-1px;}
+.report_wrap .report_header .report_txt_01 {padding-left:55px; color:#fff; font-size:15px}
+.report_wrap .report_header .report_txt_02 {color:#b6b6b6; font-size:13px;}
+.report_wrap img {display:block; position:absolute; z-index:999; top:-4px; left:9px;}
+.report_wrap ul {width:100%; height:auto; margin:0; padding:0; overflow:hidden;}
+.report_wrap ul li {position:relative; width:100%; height:40px; padding-left:20px; border-top:1px solid #fff; border-bottom:1px solid #d0d0d1; background-color:#f2f2f5; color:#374148; font-size:14px; line-height:30px; box-sizing:border-box;}
+.report_wrap .last_li {display:block; width:100%; height:auto; padding:10px 20px; color:#727272; line-height:20px;}
+.report_wrap .last_li div {display:block; height:80px; background-size:35%; background-repeat:no-repeat;}
+.msg_radio_1 {position:absolute; z-index:-1000; left:-1000px; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; border:0; vertical-align:middle; clip:rect(0 0 0 0);}
+.msg_radio_1 {display:inline-block; height:25px; background-repeat:no-repeat; background-position:0 0; vertical-align:middle;}
+.radio_css01 {display:inline-block; float:right; height:25px; margin-top:3px; padding-right:5px; background-repeat:no-repeat; background-position:0 0;}
+.msg_radio_1:checked + .radio_css01 {background-position:0 -25px;}
+input[type=radio].radio_css01 {background-position:0 -25px;}
+label.radio_label { width:100%; height:25px; color:#374148; font-size:14px; padding:0; margin:0 0 6px 0; }
+label.radio_css01 {background-image:url("https://image.yeoboya.com/imgs/new_wedding/mobile/img/hope_radio.png");background-size:25px 50px; }
+.report_btn_cancel {float:left; width:50%; height:35px; border:none; border-bottom-left-radius:10px; background-color:#c5beb6; color:#fff; -webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none !important;}
+.report_btn_rpt {float:right; width:50%; height:35px; border:none; border-bottom-right-radius:10px; background-color:#7a7370; color:#fff;}
+.reason_txt_wrap{height:66px!important; padding:0!important; border-top:0!important;}
+.reason_txt_wrap .reason_title_wrap{width:100%; height:32px; line-height:32px; position:relative; background:#807471; text-align:center; color:#fff;}
+.reason_txt_wrap .reason_txt_box{display:block; width:100%; height:auto; padding:5px; box-sizing:border-box;}
+.reason_btn_box{position:relative; width:100%; height:auto;}
+.reason_btn_box:after{display:block; content:''; clear:both;}
+.reason_textbox{width:100%; background-color:#fff; border-radius:5px; padding:7px; box-sizing:border-box; outline:none; resize:none; font-size:14px; border:1px solid #ccc; line-height:20px;}
+
+
+.msgLayer { position: fixed; z-index:1003; }
+.msg_bg_modal { position: fixed; top:0; right: 0; width:100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1002;}
+
+.pop_msgbox .textarea .btn_special{display:block; width:165px; height:91px; background:url("https://image.yeoboya.com/imgs/new_wedding/mobile/talk/pop_msg_video.png") center center no-repeat; background-size:165px 91px; overflow:hidden;}
+.pop_msgbox .textarea .btn_special .video_ex{top:0; left:63px; padding:8px; margin-left:49px; width:100px; height:75px; object-fit:cover;}
+.pop_msgbox .textarea .btn_special .video_play{position:absolute; top:57px; left:100px;}
+.pop_msgbox .textarea .btn_special .video_time{position:absolute; width:140px; top:85px; left:44px; font-size:13px; color:#fff; font-weight:bold; text-align:center;}
+
+</style>
+
+</head>
+<body style=";-webkit-overflow-scrolling: touch">
+<div id="msg_pop"></div>
+	<header>
+		<a href="javascript:$.goBack();" class="btn_back"><img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img/btn_back.jpg" width="30" height="31" alt="뒤로"></a>
+		<p class="title_header font_m">공지사항</p>
+		<a href="javascript:void(0);" onclick="$.finishPop('')" class="btn_home">
+			<img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img/home.png" width="33" height="31" alt="홈으로">
+		</a>
+	</header>
+   <!-- 일감3281- 공지사항 내 홍보영상, 탭 추가 -->
+    <div class="tap_box notice_tap">
+		<a href="#" class="tap_off font_b"><span class="tab_txt">공지사항</span></a>
+		<a href="#t" class="tap_on font_b"><span class="tab_txt">여보야 홍보영상<span class="pr_new_bdg">new</span></span></a>
+	</div>
+    <div class="yeoboya_video_wrap">
+        <div class="yb_title_wrap">
+            <p class="yb_video_title">여보야 TV광고 Full 버전</p>
+            <span class="yb_video_date">19.04.19</span>
+        </div>
+        <div class="yb_video_area">
+            <iframe width="640" height="320" src="https://www.youtube.com/embed/C4jHnoWQZpw?autoplay=0&amp;controls=1&amp;rel=0&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fm.yeoboya.com&amp;widgetid=1" class="iframe_pr" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="yb_video_txt">
+            <div class="video_like_wrap">
+                <input type="checkbox" id="like01" class="yb_like_video" />
+                <label for="like01" class="yb_like_heart"></label>
+                <label for="like01" class="yb_like_txt">좋아요 900개</label>
+                <span class="pr_video_view">조회수 9,502회</span>
+            </div>
+            <div class="pr_video_content">
+                <div class="pr_content_txt">
+                    괜찮은 배우자를 만나는 가장 스마트한 방법 ♡<br>가입비 NO! 주선비NO! 성혼비 NO!<br>70만 다운로드, 평점 4.4의 신개념 결혼재혼 어플 '여보야'에서 다양하고 합리적인 서비스를 무료로 사용해보세요!
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="yeoboya_video_wrap">
+        <div class="yb_title_wrap">
+            <p class="yb_video_title">엄마와 딸의 흔한대화
+            <span class="yb_video_date">19.04.19</span>
+            </p>
+        </div>
+        <div class="yb_video_area">
+            <iframe width="640" height="320" src="https://www.youtube.com/embed/dfoaJim6k-I?autoplay=0&amp;controls=1&amp;rel=0&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fm.yeoboya.com&amp;widgetid=1" class="iframe_pr" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="yb_video_txt">
+            <div class="video_like_wrap">
+                <input type="checkbox" id="like02" class="yb_like_video" />
+                <label for="like02" class="yb_like_heart"></label>
+                <label for="like02" class="yb_like_txt">좋아요 900개</label>
+                <span class="pr_video_view">조회수 9,502회</span>
+            </div>
+            <div class="pr_video_content">
+                <div class="pr_content_txt">
+                    엄마와 딸의 흔한 대화
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="yeoboya_video_wrap">
+        <div class="yb_title_wrap">
+            <p class="yb_video_title">드디어 나도 여보야에서 결혼한다!
+            <span class="yb_video_date">19.04.12</span>
+            </p>
+        </div>
+        <div class="yb_video_area">
+            <iframe width="640" height="320" src="https://www.youtube.com/embed/nNw8D_Ke7zo?autoplay=0&amp;controls=1&amp;rel=0&amp;enablejsapi=1&amp;origin=http%3A%2F%2Fm.yeoboya.com&amp;widgetid=1" class="iframe_pr" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="yb_video_txt">
+            <div class="video_like_wrap">
+                <input type="checkbox" id="like03" class="yb_like_video" />
+                <label for="like03" class="yb_like_heart"></label>
+                <label for="like03" class="yb_like_txt">좋아요 900개</label>
+                <span class="pr_video_view">조회수 9,502회</span>
+            </div>
+            <div class="pr_video_content">
+                <div class="pr_content_txt">
+                    드디어 나도 여보야에서 결혼한다!<br>청첩장 그만 받고 이제 돌리셔야죠...<br>0:03 혼신의 눈물연기... ㄷㄷㄷ
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //일감3281- 공지사항 내 홍보영상, 탭 추가 -->
+<div id="moreBtn" style="display:none;"><a href="javascript:void(0);" onclick="moreView.printList();" class="appBtn">더보기</a></div>
+<div class="noti_feedbacks_dimmed" id="notiReplayArea" style="display: none;"></div>
+<!-- ################################### 신고창 공통 모달 (현재 허위프로필신고, 추가사진허위신고만 쓰고있음) ################################### -->
+<div class="report_modal" id="reportModal"></div>
+<!-- ################################### [허위프로필신고] 클릭시 보이는 신고창 ################################### -->
+<div id="profileReport" class="report_wrap">
+	<img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img2/ico_report.png" width="42" height="43" alt="아이콘">
+	<div class="report_header font_b">
+		<span class="font_b report_txt_01">허위신고하기<span class="font_m report_txt_02">(신고 사유를 선택하여 주세요)</span></span>
+	</div>
+	<ul id="profileReportUl">
+		<span></span>
+		<div class="reason_btn_box">
+			<button href="javascript:void(0);" onclick="$.cancelMsg()" class="font_m report_btn_cancel">취소</button>
+			<button href="javascript:void(0);" onclick="$.sendProfile();" class="font_m report_btn_rpt sendReport">신고하기</button>
+		</div>
+	</ul>
+</div>
+<!-- ################################### 채팅창/메시지박스 [신고하기] 클릭시 보이는 신고창 ################################### -->
+<div id="msgReport" class="report_wrap">
+	<img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img2/ico_report.png" width="42" height="43" alt="아이콘">
+	<div class="report_header font_b">
+		<span class="font_b report_txt_01">신고하기<span class="font_m report_txt_02">(신고 사유를 선택하여 주세요)</span></span>
+	</div>
+	<ul id="msgReportUl">
+		<span></span>
+		<div>
+			<button href="javascript:void(0);" onclick="$.cancelMsg()" class="font_m report_btn_cancel">취소</button>
+			<button href="javascript:void(0);" onclick="$.sendMsg()" class="font_m report_btn_rpt sendReport">신고하기</button>
+		</div>
+	</ul>
+</div>
+<!-- ################################### [추가사진 허위신고] 클릭시 보이는 신고창 ################################### -->
+<div id="wealthReport" class="report_wrap">
+	<img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img2/ico_report.png" width="42" height="43" alt="아이콘">
+	<div class="report_header font_b">
+		<span class="font_b report_txt_01">허위신고하기<span class="font_m report_txt_02">(신고 사유를 선택하여 주세요)</span></span>
+	</div>
+	<ul id="wealthReportUI">
+		<span></span>
+		<div class="reason_btn_box">
+			<button href="javascript:void(0);" onclick="$.cancelMsg()" class="font_m report_btn_cancel">취소</button>
+			<button href="javascript:void(0);" onclick="$.sendProfile();" class="font_m report_btn_rpt sendReport">신고하기</button>
+		</div>
+	</ul>
+</div>
+<style>
+.posi_relative {position: relative;}
+#btnMoveTop:focus {outline:none;}
+</style>
+
+<a href="javascript:void(0);" id="btnMoveTop"><img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img/btn_go_up.png" width="40" alt=""></a>
+<a href="javascript:void(0);" id="btnMoveBottom" style=""><img src="https://image.yeoboya.com/imgs/new_wedding/mobile/img/btn_go_down.png" width="40" alt=""></a>
+
+<div id="pushFloat"></div>
+
+<span id="connectionStatus" style="position:fixed; z-index:9000; top:25px; left:0px;">&nbsp;<b><font color="red" size="2">OO</font></b></span></body></html>
